@@ -1,22 +1,24 @@
 'use strict';
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import safeGet from 'lodash.get';
 import uniqBy from 'lodash.uniqby';
 import { FormattedMessage } from 'react-intl';
 import {
   Form,
-  Icon,
   Spin,
   Input,
   Button,
   Select,
   message,
 } from 'antd';
+import {
+  DeleteOutlined,
+  PlusOutlined,
+} from '@ant-design/icons';
 
 import request from '../util/request';
 
-const FormItem = Form.Item;
 const Option = Select.Option;
 
 const webhookFormItemLayout = {
@@ -32,148 +34,130 @@ const buttonFormItemLayout = {
   },
 };
 
-class DingdingSetting extends React.Component {
-  state = {
-    webhooks: [],
-    loading: false,
-  }
+const DingdingSetting = () => {
+  const [form] = Form.useForm();
+  const [loading, setLoading] = useState(false);
 
-  componentDidMount () {
-    this.fetchWebhooks();
-  }
-
-  fetchWebhooks = async () => {
-    this.setState({ loading: true });
+  const fetchWebhooks = async () => {
+    setLoading(true);
     const res = await request('getWebhooks', 'GET');
-    this.setState({ loading: false });
+    setLoading(false);
     if (!res.success) return;
 
     const webhooks = safeGet(res, 'data.webhooks');
     if (!Array.isArray(webhooks) || !webhooks.length) {
-      this.setState({
+      form.setFieldsValue({
         webhooks: [{
           url: '',
-        }],
+        }]
       });
       return;
     }
 
-    this.setState({
-      webhooks,
-    });
-  }
+    form.setFieldsValue({ webhooks })
+  };
 
-  postWebhooks = async (webhooks) => {
+  useEffect(() => {
+    fetchWebhooks();
+  }, []);
+
+  const postWebhooks = async (webhooks) => {
     const res = await request('postWebhooks', 'POST', {
       webhooks,
     });
     if (res.success) {
-      await this.fetchWebhooks();
+      await fetchWebhooks();
       message.success('Update webhooks successfully!');
     } else {
       message.error('Update webhooks failed.');
       console.error('postWebhooks', res);
     }
-  }
+  };
 
-  removeOneNotification = index => {
-    const webhooks = [
-      ...this.state.webhooks,
-    ];
-    webhooks.splice(index, 1);
-    this.setState({ webhooks });
-  }
+  const updateWebhooks = values => {
+    const uniqWebhooks = uniqBy(values.webhooks, value => `${value.tag}${value.url}`);
+    postWebhooks(uniqWebhooks);
+  };
 
-  addMoreNotification = () => {
-    this.setState({
-      webhooks: [
-        ...this.state.webhooks,
-        {
-          url: '',
-        },
-      ],
-    });
-  }
-
-  updateWebhooks = e => {
-    e.preventDefault();
-    this.props.form.validateFields((err, values) => {
-      if (err) return;
-      const uniqWebhooks = uniqBy(values.webhooks, value => `${value.tag}${value.url}`);
-      this.postWebhooks(uniqWebhooks);
-    });
-  }
-
-  renderWebhookList = () => {
-    const { getFieldDecorator } = this.props.form;
-    return this.state.webhooks.map((webhook, index) => {
-      const notifyTypeSelector = getFieldDecorator(`webhooks[${index}].tag`, {
-        initialValue: webhook.tag || 'build',
-      })(
-        <Select style={{ width: 88 }}>
-          <Option value="build"><FormattedMessage id="setting.notification.build" /></Option>
-        </Select>
-      );
-      return (<FormItem
-        key={index}
-        {...webhookFormItemLayout}
+  return (
+    <Spin spinning={loading}>
+      <Form
+        form={form}
+        onFinish={updateWebhooks}
+        autoComplete="off"
       >
-        {getFieldDecorator(`webhooks[${index}].url`, {
-          validateTrigger: ['onBlur'],
-          initialValue: webhook.url,
-          rules: [{
-            required: true,
-            type: 'url',
-            whitespace: true,
-            message: 'Please input DingTalk webhook url.',
-          }],
-        })(
-          <Input
-            addonBefore={notifyTypeSelector}
-            placeholder="webhook"
-            addonAfter={
-              (
-                webhook.url || // committed webhook
-                (index === this.state.webhooks.length - 1) // new webhook input
-              ) ? (
-                  <Icon
-                    style={{
-                      cursor: 'pointer',
-                    }}
-                    type="delete"
-                    onClick={() => this.removeOneNotification(index)}
-                  />
-                ) : null
-            }
-          />
-        )}
-      </FormItem>);
-    });
-  }
+        <Form.List name="webhooks">
+          {(fields, { add, remove }) => (
+            <>
+              {fields.map(field => (
+                <div key={field.key}>
+                  <Form.Item
+                    {...field}
+                    {...webhookFormItemLayout}
+                    name={[field.name, 'url']}
+                    fieldKey={[field.fieldKey, 'url']}
+                    validateTrigger={['onBlur']}
+                    rules={[{
+                      required: true,
+                      type: 'url',
+                      whitespace: true,
+                      message: 'Please input DingTalk webhook url.',
+                    }]}
+                  >
+                    <Input
+                      addonBefore={
+                        <Form.Item
+                          name={[field.name, 'tag']}
+                          initialValue="build"
+                          noStyle
+                        >
+                          <Select style={{ width: 88 }}>
+                            <Option value="build"><FormattedMessage id="setting.notification.build" /></Option>
+                          </Select>
+                        </Form.Item>
+                      }
+                      placeholder="webhook"
+                      addonAfter={
+                        <DeleteOutlined
+                          style={{
+                            cursor: 'pointer',
+                          }}
+                          onClick={() => remove(field.name)}
+                        />
+                      }
+                    />
+                  </Form.Item>
+                </div>
+              ))}
 
-  render () {
-    return (
-      <Form>
-        <Spin spinning={this.state.loading}>
-          {this.renderWebhookList()}
-        </Spin>
-        <FormItem {...webhookFormItemLayout}>
-          <Button data-accessibilityid="add-notification" type="dashed" onClick={this.addMoreNotification}
-            style={{ width: '100%' }}>
-            <Icon type="plus" /> <FormattedMessage id='setting.addDingMessage' />
-          </Button>
-        </FormItem>
-        <FormItem {...buttonFormItemLayout}>
+              <Form.Item
+                {...webhookFormItemLayout}
+              >
+                <Button
+                  type="dashed"
+                  data-accessibilityid="add-notification"
+                  onClick={() => add()}
+                  block
+                  icon={<PlusOutlined />}
+                >
+                  <FormattedMessage id='setting.addDingMessage' />
+                </Button>
+              </Form.Item>
+            </>
+          )}
+        </Form.List>
+        <Form.Item {...buttonFormItemLayout}>
           <Button
-            onClick={this.updateWebhooks}
+            htmlType="submit"
             type="primary"
             style={{ width: '100%' }}
-          ><FormattedMessage id='setting.submit' /></Button>
-        </FormItem>
+          >
+            <FormattedMessage id='setting.submit' />
+          </Button>
+        </Form.Item>
       </Form>
-    );
-  }
-}
+    </Spin>
+  );
+};
 
-export default Form.create()(DingdingSetting);
-
+export default DingdingSetting;

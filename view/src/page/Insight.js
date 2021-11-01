@@ -4,12 +4,17 @@ import {
   Row,
   Col,
   Spin,
-  Icon,
   Table,
   Popover,
   Breadcrumb,
   DatePicker,
 } from 'antd';
+import {
+  QuestionCircleOutlined,
+  CaretUpOutlined,
+  CaretDownOutlined,
+  BulbOutlined,
+} from '@ant-design/icons';
 import React from 'react';
 import safeGet from 'lodash.get';
 
@@ -130,7 +135,7 @@ export default class Builds extends React.Component {
       title: <span>
         <FormattedMessage id='insight.test.lineCoverage' />
         <Popover content={<FormattedMessage id='insight.test.lineCoverage.tip' />}>
-          <Icon style={{marginLeft: '2px'}} type="question-circle" />
+          <QuestionCircleOutlined style={{marginLeft: '2px'}} />
         </Popover>
       </span>,
       dataIndex: 'linePercent',
@@ -181,7 +186,7 @@ export default class Builds extends React.Component {
       title: <span>
         <FormattedMessage id='insight.test.passPercent' />
         <Popover content={<FormattedMessage id='insight.test.passPercent.tip' />}>
-          <Icon style={{marginLeft: '2px'}} type="question-circle" />
+          <QuestionCircleOutlined style={{marginLeft: '2px'}} />
         </Popover>
       </span>,
       dataIndex: 'passPercent',
@@ -302,7 +307,7 @@ export default class Builds extends React.Component {
     return (
       <div className="topcard">
         <div className="up">
-          <Icon type="caret-up" />
+          <CaretUpOutlined />
           <Link to={{pathname: '/', search: `?jobName=${first.jobName}`}}>
             {first.jobName}
           </Link>
@@ -311,7 +316,7 @@ export default class Builds extends React.Component {
           </span>
         </div>
         <div className="down">
-          <Icon type="caret-down" />
+          <CaretDownOutlined />
           <Link to={{pathname: '/', search: `?jobName=${last.jobName}`}}>
             {last.jobName}
           </Link>
@@ -363,9 +368,10 @@ export default class Builds extends React.Component {
           <Row style={{marginBottom: '10px'}}>
             <Col span={6} offset={18}>
               <RangePicker
+                style={{ width: '100%' }}
                 renderExtraFooter={() =>
                   <span>
-                    <Icon type="bulb" />
+                    <BulbOutlined />
                     <FormattedMessage id='insight.dateRange.tip' />
                   </span>
                 }

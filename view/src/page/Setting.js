@@ -33,28 +33,17 @@ export default class Setting extends React.Component {
           </Breadcrumb.Item>
         </Breadcrumb>
         <Card style={{ marginTop: 10 }} title={<FormattedMessage id='setting.dingMessage' />}>
-          <Row>
-            <Col data-accessibilityid="dingtalk-webhooks">
-              <DingdingSetting />
-            </Col>
-          </Row>
+          <div data-accessibilityid="dingtalk-webhooks">
+            <DingdingSetting />
+          </div>
         </Card>
         <Card style={{ marginTop: 10 }} title={<FormattedMessage id='setting.site' />}>
-          <Row>
-            <Col>
-              <SiteSetting />
-            </Col>
-          </Row>
+          <SiteSetting />
         </Card>
         <Card style={{ marginTop: 10 }} title={<FormattedMessage id='setting.versioning' />}>
-          <Row>
-            <Col>
-              reliable-web: { window.pageConfig.version }
-            </Col>
-          </Row>
+          reliable-web: { window.pageConfig.version }
         </Card>
       </ReliableLayout>
     );
   }
 }
-

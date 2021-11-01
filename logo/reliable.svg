@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="353px" height="395px" viewBox="0 0 353 395" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.3.2 (12043) - http://www.bohemiancoding.com/sketch -->
+    <title>logo-color-4</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <radialGradient cx="81.553334%" cy="6.68237106%" fx="81.553334%" fy="6.68237106%" r="100%" id="radialGradient-1">
+            <stop stop-color="#9BCB53" offset="0%"></stop>
+            <stop stop-color="#72A22A" offset="100%"></stop>
+        </radialGradient>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+            <feOffset dx="0" dy="3" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+            <feGaussianBlur stdDeviation="2" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+            <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.35 0" in="shadowBlurOuter1" type="matrix" result="shadowMatrixOuter1"></feColorMatrix>
+            <feMerge>
+                <feMergeNode in="shadowMatrixOuter1"></feMergeNode>
+                <feMergeNode in="SourceGraphic"></feMergeNode>
+            </feMerge>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="reliable-logos" sketch:type="MSArtboardGroup" transform="translate(-73.000000, -67.000000)">
+            <g id="logo-color-4" sketch:type="MSLayerGroup" transform="translate(73.000000, 67.000000)">
+                <polygon id="6Polygon" fill="url(#radialGradient-1)" sketch:type="MSShapeGroup" points="176.76383 -2.88858925 353 97.1114107 353 297.111411 176.76383 397.111411 0.52766066 297.111411 0.52766066 97.1114107 "></polygon>
+                <g id="right-outter" transform="translate(56.000000, 77.000000)" fill="#FFFFFF" sketch:type="MSShapeGroup">
+                    <g id="circle">
+                        <g id="timer">
+                            <path d="M212.774945,198 C230.389477,177.049229 241,150.013724 241,120.5 C241,53.9496876 187.050312,0 120.5,0 C53.9496876,0 0,53.9496876 0,120.5 C0,169.01762 28.6739628,210.838077 69.9999946,229.939478 L70,200.105064 C44.0594232,183.347461 26.8884298,154.177948 26.8884298,120.997934 C26.8884298,69.0226899 69.0226899,26.8884298 120.997934,26.8884298 C172.973178,26.8884298 215.107438,69.0226899 215.107438,120.997934 C215.107438,152.828863 199.304388,180.968792 175.116007,198 L212.774945,198 Z" id="p"></path>
+                        </g>
+                    </g>
+                    <path d="M77.6829163,108.078006 C81.3448416,110.089195 116.765524,133.601806 116.765524,133.601806 C116.765524,133.601806 146.285243,91.679544 174.370542,62.3176514 C177.863321,58.6661106 181.820294,53.5857109 185.467247,50.1697123 C211.145294,26.1178036 238.378969,10.4891463 240.862738,15.1526856 C242.302753,17.8564666 232.20114,25.5404929 220.48342,37.6722571 C210.459652,48.0502145 201.548265,58.5924338 192.903584,69.7430303 C191.747968,71.2336351 190.597118,72.7351118 189.449014,74.2485212 C187.585123,76.7054694 184.563028,80.8281806 180.212584,86.4406092 C176.095201,91.75237 169.498325,101.588355 169.498325,101.588355 C169.498325,101.588355 162.848095,110.462471 151.394921,130.036566 C146.373192,138.618974 141.084247,148.215837 136.413976,156.438543 C130.432652,166.969551 127.439479,171.840356 125.699347,173.314445 C124.953073,173.946624 124.285006,174.011836 124.285006,174.011836 C121.691625,174.938455 118.191329,173.944302 116.464703,171.791154 C116.464703,171.791154 93.1029438,142.58597 85.3443423,133.601806 C77.5857408,124.617641 77.0293745,123.677948 73.0924746,118.920861 C69.7410505,114.871223 68.0202627,110.473898 68.0202627,107.506807 C68.0202627,104.962602 76.1262356,107.223051 77.6829163,108.078006 Z" id="tick" filter="url(#filter-2)"></path>
+                </g>
+                <g id="text" transform="translate(131.000000, 269.000000)" fill="#FFFFFF" sketch:type="MSShapeGroup">
+                    <g id="3point" transform="translate(11.000000, 16.000000)">
+                        <circle id="Oval-3" cx="100.227273" cy="11.0909091" r="10.9545455"></circle>
+                        <circle id="Oval-3-Copy-2" cx="11.4954545" cy="11.0909091" r="10.9545455"></circle>
+                        <circle id="Oval-3-Copy" cx="49.8363636" cy="11.0909091" r="10.9545455"></circle>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

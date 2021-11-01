@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>上报客户端 | Reliable</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="https://macacajs.github.io/assets/favicon.ico">
+    <script async="true" src="https://www.googletagmanager.com/gtag/js?id=UA-49226133-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-49226133-2');
+    </script>
+    <script>
+!function(t,e,a,r,c){t.TracertCmdCache=t.TracertCmdCache||[],t[c]=window[c]||
+  {_isInit:!0,call:function(){t.TracertCmdCache.push(arguments)},
+  start:function(t){this.call('start',t)}},t[c].l=new Date;
+  var n=e.createElement(a),s=e.getElementsByTagName(a)[0];
+  n.async=!0,n.src=r,s.parentNode.insertBefore(n,s)}
+(window,document,'script','https://tracert.alipay.com/tracert.js','Tracert');
+  Tracert.start({ plugins: [ 'BucName' ], spmAPos: 'a254', spmBPos: 'b19448' });
+</script>
+    <style>
+      img {
+        width: 100%;
+      }
+    </style>
+    <meta name="description" content="Macaca 的持续交付服务套件。">
+    
+    <link rel="preload" href="/reliable/assets/css/0.styles.5e749908.css" as="style"><link rel="preload" href="/reliable/assets/js/app.696d9fd8.js" as="script"><link rel="preload" href="/reliable/assets/js/2.03079f86.js" as="script"><link rel="preload" href="/reliable/assets/js/25.4fc276f8.js" as="script"><link rel="prefetch" href="/reliable/assets/js/10.10e47c7f.js"><link rel="prefetch" href="/reliable/assets/js/11.0cf93b9f.js"><link rel="prefetch" href="/reliable/assets/js/12.8505d70d.js"><link rel="prefetch" href="/reliable/assets/js/13.3e256ce3.js"><link rel="prefetch" href="/reliable/assets/js/14.19cb7359.js"><link rel="prefetch" href="/reliable/assets/js/15.b60888ce.js"><link rel="prefetch" href="/reliable/assets/js/16.66004b26.js"><link rel="prefetch" href="/reliable/assets/js/17.ca785890.js"><link rel="prefetch" href="/reliable/assets/js/18.cc07cebe.js"><link rel="prefetch" href="/reliable/assets/js/19.73212fef.js"><link rel="prefetch" href="/reliable/assets/js/20.deedd40c.js"><link rel="prefetch" href="/reliable/assets/js/21.9aba226d.js"><link rel="prefetch" href="/reliable/assets/js/22.771507b0.js"><link rel="prefetch" href="/reliable/assets/js/23.401eb6d8.js"><link rel="prefetch" href="/reliable/assets/js/24.0ad9dfe7.js"><link rel="prefetch" href="/reliable/assets/js/26.55b38cde.js"><link rel="prefetch" href="/reliable/assets/js/3.fd10b205.js"><link rel="prefetch" href="/reliable/assets/js/4.fe9cd9cb.js"><link rel="prefetch" href="/reliable/assets/js/5.bffe759b.js"><link rel="prefetch" href="/reliable/assets/js/6.0e5e82a1.js"><link rel="prefetch" href="/reliable/assets/js/7.b741d34f.js"><link rel="prefetch" href="/reliable/assets/js/8.277d11e4.js"><link rel="prefetch" href="/reliable/assets/js/9.ce997ea8.js">
+    <link rel="stylesheet" href="/reliable/assets/css/0.styles.5e749908.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/reliable/zh/" class="home-link router-link-active"><!----> <span class="site-name">Reliable</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/reliable/zh/guide/" class="nav-link router-link-active">
+  指南
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="生态成员" class="dropdown-title"><span class="title">生态成员</span> <span class="arrow down"></span></button> <button type="button" aria-label="生态成员" class="mobile-dropdown-title"><span class="title">生态成员</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          官网
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Macaca
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          Web 测试框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/uitest/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  UITest
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://macacajs.github.io/torchjs/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Torchjs
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          人工智能
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/zh/guide/computer-vision.html" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  计算机视觉
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          Mock 方案
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/macaca-datahub/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DataHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          检查工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/app-inspector/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  App Inspector
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          遍历工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/NoSmoke/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  NoSmoke
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          报告器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/macaca-reporter/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Macaca Reporter
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          持续集成
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/reliable/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Reliable
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/reliable/guide/reliable-cli.html" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/reliable/zh/guide/reliable-cli.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li></ul></div></div> <a href="https://github.com/macacajs/reliable" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/reliable/zh/guide/" class="nav-link router-link-active">
+  指南
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="生态成员" class="dropdown-title"><span class="title">生态成员</span> <span class="arrow down"></span></button> <button type="button" aria-label="生态成员" class="mobile-dropdown-title"><span class="title">生态成员</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          官网
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Macaca
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          Web 测试框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/uitest/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  UITest
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://macacajs.github.io/torchjs/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Torchjs
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          人工智能
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/zh/guide/computer-vision.html" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  计算机视觉
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          Mock 方案
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/macaca-datahub/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DataHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          检查工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/app-inspector/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  App Inspector
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          遍历工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/NoSmoke/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  NoSmoke
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          报告器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/macaca-reporter/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Macaca Reporter
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          持续集成
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/reliable/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Reliable
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/reliable/guide/reliable-cli.html" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/reliable/zh/guide/reliable-cli.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li></ul></div></div> <a href="https://github.com/macacajs/reliable" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>使用指南</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/reliable/zh/guide/reliable-cli.html" aria-current="page" class="active sidebar-link">上报客户端</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/reliable/zh/guide/reliable-cli.html#安装" class="sidebar-link">安装</a></li><li class="sidebar-sub-header"><a href="/reliable/zh/guide/reliable-cli.html#使用" class="sidebar-link">使用</a></li><li class="sidebar-sub-header"><a href="/reliable/zh/guide/reliable-cli.html#脚本配置" class="sidebar-link">脚本配置</a></li><li class="sidebar-sub-header"><a href="/reliable/zh/guide/reliable-cli.html#完整配置" class="sidebar-link">完整配置</a></li><li class="sidebar-sub-header"><a href="/reliable/zh/guide/reliable-cli.html#工具函数" class="sidebar-link">工具函数</a></li><li class="sidebar-sub-header"><a href="/reliable/zh/guide/reliable-cli.html#环境变量" class="sidebar-link">环境变量</a></li><li class="sidebar-sub-header"><a href="/reliable/zh/guide/reliable-cli.html#集成示例" class="sidebar-link">集成示例</a></li></ul></li><li><a href="/reliable/zh/guide/reliable-web-deploy.html" class="sidebar-link">Web 服务部署</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>持续集成</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/reliable/zh/guide/integrate-with-jenkins.html" class="sidebar-link">Jenkins 集成</a></li><li><a href="/reliable/zh/guide/jenkins-web.html" class="sidebar-link">Jenkins Web 任务配置</a></li><li><a href="/reliable/zh/guide/jenkins-ios.html" class="sidebar-link">Jenkins iOS 任务配置</a></li><li><a href="/reliable/zh/guide/jenkins-android.html" class="sidebar-link">Jenkins Android 任务配置</a></li><li><a href="/reliable/zh/guide/integrate-with-gitlab-ci.html" class="sidebar-link">Gitlab CI 集成</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>社区支持</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/reliable/zh/guide/presentations.html" class="sidebar-link">社区分享</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="上报客户端"><a href="#上报客户端" class="header-anchor">#</a> 上报客户端</h1> <hr> <h2 id="安装"><a href="#安装" class="header-anchor">#</a> 安装</h2> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">npm</span> i reliable-cli -D
+</code></pre></div><h2 id="使用"><a href="#使用" class="header-anchor">#</a> 使用</h2> <h3 id="上报"><a href="#上报" class="header-anchor">#</a> 上报</h3> <div class="language-bash extra-class"><pre class="language-bash"><code>$ reliable report -c ./reliable.config.js
+</code></pre></div><h2 id="脚本配置"><a href="#脚本配置" class="header-anchor">#</a> 脚本配置</h2> <div class="language-javascript extra-class"><pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+  files<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">build/Release-iphonesimulator/</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>pkg<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.app</span><span class="token template-punctuation string">`</span></span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  packages<span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token punctuation">{</span>
+      version<span class="token punctuation">,</span>
+      path<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>pkg<span class="token punctuation">.</span>name<span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">.app</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+    <span class="token punctuation">}</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  testInfo<span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  extraInfo<span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre></div><h2 id="完整配置"><a href="#完整配置" class="header-anchor">#</a> 完整配置</h2> <table><thead><tr><th>key</th> <th>value type</th> <th>description</th></tr></thead> <tbody><tr><td>files</td> <td><code>string[]</code></td> <td>构建附属产物</td></tr> <tr><td>packages</td> <td><code>Obejct[]</code></td> <td>构建产物</td></tr> <tr><td>testInfo</td> <td><code>Object</code></td> <td>测试覆盖率和通过率</td></tr> <tr><td>extraInfo</td> <td><code>Object</code></td> <td>额外统计的数据，比如依赖版本信息等</td></tr> <tr><td>environment</td> <td><code>Object</code></td> <td>ci 运行环境信息</td></tr> <tr><td>gitCommitInfo</td> <td><code>Object</code></td> <td>git commit 信息 by <a href="/reliable/github.com/node-modules/last-commit-log/">last-commit-log</a></td></tr></tbody></table> <p>上报内容如下：</p> <div class="language-json extra-class"><pre class="language-json"><code><span class="token punctuation">{</span>
+  <span class="token property">&quot;files&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;packages&quot;</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token punctuation">]</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;testInfo&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;tests&quot;</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;passes&quot;</span><span class="token operator">:</span> <span class="token number">4</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;linePercent&quot;</span><span class="token operator">:</span> <span class="token number">91.67</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;passPercent&quot;</span><span class="token operator">:</span> <span class="token number">100</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;testHtmlReporterPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;http://your-storage-host/example/c153d93/reports/index.html&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;coverageHtmlReporterPath&quot;</span><span class="token operator">:</span> <span class="token string">&quot;http://your-storage-host/example/c153d93/coverage/index.html&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;extraInfo&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;webpack&quot;</span><span class="token operator">:</span> <span class="token string">&quot;4.27.1&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;macaca-wd&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2.1.8&quot;</span><span class="token punctuation">,</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;environment&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;ci&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;JOB_NAME&quot;</span><span class="token operator">:</span> <span class="token string">&quot;reliable&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;RUNNER_TYPE&quot;</span><span class="token operator">:</span> <span class="token string">&quot;GITLAB_CI&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;BUILD_NUMBER&quot;</span><span class="token operator">:</span> <span class="token string">&quot;123&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;os&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;platform&quot;</span><span class="token operator">:</span> <span class="token string">&quot;linux&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;nodeVersion&quot;</span><span class="token operator">:</span> <span class="token string">&quot;v8.12.0&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;platform&quot;</span><span class="token operator">:</span> <span class="token string">&quot;web&quot;</span>
+  <span class="token punctuation">}</span><span class="token punctuation">,</span>
+  <span class="token property">&quot;gitCommitInfo&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token property">&quot;body&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;hash&quot;</span><span class="token operator">:</span> <span class="token string">&quot;9a5ebe6da33ba87a2a70947db2297c0bc3195de1&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;author&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;date&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1545019270&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;user&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;email&quot;</span><span class="token operator">:</span> <span class="token string">&quot;user@macacajs.com&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;relativeDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2 minutes ago&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;gitTag&quot;</span><span class="token operator">:</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;gitUrl&quot;</span><span class="token operator">:</span> <span class="token string">&quot;http://gitlab.com/app/reliable&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;subject&quot;</span><span class="token operator">:</span> <span class="token string">&quot;feat: update&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;committer&quot;</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+      <span class="token property">&quot;date&quot;</span><span class="token operator">:</span> <span class="token string">&quot;1545019270&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;name&quot;</span><span class="token operator">:</span> <span class="token string">&quot;user&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;email&quot;</span><span class="token operator">:</span> <span class="token string">&quot;user@macacajs.com&quot;</span><span class="token punctuation">,</span>
+      <span class="token property">&quot;relativeDate&quot;</span><span class="token operator">:</span> <span class="token string">&quot;2 minutes ago&quot;</span>
+    <span class="token punctuation">}</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;gitBranch&quot;</span><span class="token operator">:</span> <span class="token string">&quot;feat/toast&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;gitRemote&quot;</span><span class="token operator">:</span> <span class="token string">&quot;http://gitlab-ci-token/app/reliable.git&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;shortHash&quot;</span><span class="token operator">:</span> <span class="token string">&quot;9a5ebe6&quot;</span><span class="token punctuation">,</span>
+    <span class="token property">&quot;sanitizedSubject&quot;</span><span class="token operator">:</span> <span class="token string">&quot;feat-update&quot;</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+</code></pre></div><h2 id="工具函数"><a href="#工具函数" class="header-anchor">#</a> 工具函数</h2> <p>客户端预置了很多各平台常需要的工具函数。</p> <div class="language-javascript extra-class"><pre class="language-javascript"><code><span class="token keyword">const</span> helper <span class="token operator">=</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">'reliable-cli'</span><span class="token punctuation">)</span><span class="token punctuation">.</span>helper<span class="token punctuation">;</span>
+<span class="token keyword">const</span> <span class="token punctuation">{</span>
+  iosUtils<span class="token punctuation">,</span>
+  androidUtils<span class="token punctuation">,</span>
+  webUtils<span class="token punctuation">,</span>
+<span class="token punctuation">}</span> <span class="token operator">=</span> helper<span class="token punctuation">;</span>
+
+<span class="token comment">// frequently methods</span>
+
+https<span class="token operator">:</span><span class="token operator">/</span><span class="token operator">/</span>macacajs<span class="token punctuation">.</span>github<span class="token punctuation">.</span>io<span class="token operator">/</span>reliable<span class="token operator">-</span>cli<span class="token operator">/</span>
+
+</code></pre></div><h2 id="环境变量"><a href="#环境变量" class="header-anchor">#</a> 环境变量</h2> <table><thead><tr><th>name</th> <th>description</th></tr></thead> <tbody><tr><td>RELIABLE_SERVER_URL</td> <td>Reliable 服务端的访问地址</td></tr></tbody></table> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token assign-left variable">RELIABLE_SERVER_URL</span><span class="token operator">=</span>http://127.0.0.1:9900 ci.sh
+</code></pre></div><h2 id="集成示例"><a href="#集成示例" class="header-anchor">#</a> 集成示例</h2> <ul><li><a href="//github.com/app-bootstrap/ios-app-bootstrap">ios-app-bootstrap</a></li> <li><a href="//github.com/app-bootstrap/android-app-bootstrap">android-app-bootstrap</a></li> <li><a href="//github.com/app-bootstrap/web-app-bootstrap">web-app-bootstrap</a></li></ul></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/macacajs/reliable/edit/master/docs/zh/guide/reliable-cli.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">7/5/2019, 7:37:33 AM</span></div></footer> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/reliable/zh/guide/reliable-web-deploy.html">
+        Web 服务部署
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/reliable/assets/js/app.696d9fd8.js" defer></script><script src="/reliable/assets/js/2.03079f86.js" defer></script><script src="/reliable/assets/js/25.4fc276f8.js" defer></script>
+  </body>
+</html>

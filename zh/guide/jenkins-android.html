@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Jenkins Android 任务配置 | Reliable</title>
+    <meta name="generator" content="VuePress 1.8.2">
+    <link rel="icon" href="https://macacajs.github.io/assets/favicon.ico">
+    <script async="true" src="https://www.googletagmanager.com/gtag/js?id=UA-49226133-2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-49226133-2');
+    </script>
+    <script>
+!function(t,e,a,r,c){t.TracertCmdCache=t.TracertCmdCache||[],t[c]=window[c]||
+  {_isInit:!0,call:function(){t.TracertCmdCache.push(arguments)},
+  start:function(t){this.call('start',t)}},t[c].l=new Date;
+  var n=e.createElement(a),s=e.getElementsByTagName(a)[0];
+  n.async=!0,n.src=r,s.parentNode.insertBefore(n,s)}
+(window,document,'script','https://tracert.alipay.com/tracert.js','Tracert');
+  Tracert.start({ plugins: [ 'BucName' ], spmAPos: 'a254', spmBPos: 'b19448' });
+</script>
+    <style>
+      img {
+        width: 100%;
+      }
+    </style>
+    <meta name="description" content="Macaca 的持续交付服务套件。">
+    
+    <link rel="preload" href="/reliable/assets/css/0.styles.5e749908.css" as="style"><link rel="preload" href="/reliable/assets/js/app.696d9fd8.js" as="script"><link rel="preload" href="/reliable/assets/js/2.03079f86.js" as="script"><link rel="preload" href="/reliable/assets/js/21.9aba226d.js" as="script"><link rel="prefetch" href="/reliable/assets/js/10.10e47c7f.js"><link rel="prefetch" href="/reliable/assets/js/11.0cf93b9f.js"><link rel="prefetch" href="/reliable/assets/js/12.8505d70d.js"><link rel="prefetch" href="/reliable/assets/js/13.3e256ce3.js"><link rel="prefetch" href="/reliable/assets/js/14.19cb7359.js"><link rel="prefetch" href="/reliable/assets/js/15.b60888ce.js"><link rel="prefetch" href="/reliable/assets/js/16.66004b26.js"><link rel="prefetch" href="/reliable/assets/js/17.ca785890.js"><link rel="prefetch" href="/reliable/assets/js/18.cc07cebe.js"><link rel="prefetch" href="/reliable/assets/js/19.73212fef.js"><link rel="prefetch" href="/reliable/assets/js/20.deedd40c.js"><link rel="prefetch" href="/reliable/assets/js/22.771507b0.js"><link rel="prefetch" href="/reliable/assets/js/23.401eb6d8.js"><link rel="prefetch" href="/reliable/assets/js/24.0ad9dfe7.js"><link rel="prefetch" href="/reliable/assets/js/25.4fc276f8.js"><link rel="prefetch" href="/reliable/assets/js/26.55b38cde.js"><link rel="prefetch" href="/reliable/assets/js/3.fd10b205.js"><link rel="prefetch" href="/reliable/assets/js/4.fe9cd9cb.js"><link rel="prefetch" href="/reliable/assets/js/5.bffe759b.js"><link rel="prefetch" href="/reliable/assets/js/6.0e5e82a1.js"><link rel="prefetch" href="/reliable/assets/js/7.b741d34f.js"><link rel="prefetch" href="/reliable/assets/js/8.277d11e4.js"><link rel="prefetch" href="/reliable/assets/js/9.ce997ea8.js">
+    <link rel="stylesheet" href="/reliable/assets/css/0.styles.5e749908.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/reliable/zh/" class="home-link router-link-active"><!----> <span class="site-name">Reliable</span></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/reliable/zh/guide/" class="nav-link router-link-active">
+  指南
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="生态成员" class="dropdown-title"><span class="title">生态成员</span> <span class="arrow down"></span></button> <button type="button" aria-label="生态成员" class="mobile-dropdown-title"><span class="title">生态成员</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          官网
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Macaca
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          Web 测试框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/uitest/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  UITest
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://macacajs.github.io/torchjs/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Torchjs
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          人工智能
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/zh/guide/computer-vision.html" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  计算机视觉
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          Mock 方案
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/macaca-datahub/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DataHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          检查工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/app-inspector/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  App Inspector
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          遍历工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/NoSmoke/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  NoSmoke
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          报告器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/macaca-reporter/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Macaca Reporter
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          持续集成
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/reliable/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Reliable
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/reliable/guide/jenkins-android.html" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/reliable/zh/guide/jenkins-android.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li></ul></div></div> <a href="https://github.com/macacajs/reliable" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav></div></header> <div class="sidebar-mask"></div> <aside class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/reliable/zh/guide/" class="nav-link router-link-active">
+  指南
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="生态成员" class="dropdown-title"><span class="title">生态成员</span> <span class="arrow down"></span></button> <button type="button" aria-label="生态成员" class="mobile-dropdown-title"><span class="title">生态成员</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>
+          官网
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Macaca
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          Web 测试框架
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/uitest/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  UITest
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="https://macacajs.github.io/torchjs/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Torchjs
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          人工智能
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/zh/guide/computer-vision.html" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  计算机视觉
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          Mock 方案
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/macaca-datahub/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DataHub
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          检查工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/app-inspector/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  App Inspector
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          遍历工具
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/NoSmoke/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  NoSmoke
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          报告器
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/macaca-reporter/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Macaca Reporter
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>
+          持续集成
+        </h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="https://macacajs.github.io/reliable/zh/" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  Reliable
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="Select language" class="dropdown-title"><span class="title">选择语言</span> <span class="arrow down"></span></button> <button type="button" aria-label="Select language" class="mobile-dropdown-title"><span class="title">选择语言</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/reliable/guide/jenkins-android.html" class="nav-link">
+  English
+</a></li><li class="dropdown-item"><!----> <a href="/reliable/zh/guide/jenkins-android.html" aria-current="page" class="nav-link router-link-exact-active router-link-active">
+  简体中文
+</a></li></ul></div></div> <a href="https://github.com/macacajs/reliable" target="_blank" rel="noopener noreferrer" class="repo-link">
+    GitHub
+    <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></nav>  <ul class="sidebar-links"><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>使用指南</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/reliable/zh/guide/reliable-cli.html" class="sidebar-link">上报客户端</a></li><li><a href="/reliable/zh/guide/reliable-web-deploy.html" class="sidebar-link">Web 服务部署</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading open"><span>持续集成</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/reliable/zh/guide/integrate-with-jenkins.html" class="sidebar-link">Jenkins 集成</a></li><li><a href="/reliable/zh/guide/jenkins-web.html" class="sidebar-link">Jenkins Web 任务配置</a></li><li><a href="/reliable/zh/guide/jenkins-ios.html" class="sidebar-link">Jenkins iOS 任务配置</a></li><li><a href="/reliable/zh/guide/jenkins-android.html" aria-current="page" class="active sidebar-link">Jenkins Android 任务配置</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/reliable/zh/guide/jenkins-android.html#依赖准备" class="sidebar-link">依赖准备</a></li><li class="sidebar-sub-header"><a href="/reliable/zh/guide/jenkins-android.html#示例工程" class="sidebar-link">示例工程</a></li><li class="sidebar-sub-header"><a href="/reliable/zh/guide/jenkins-android.html#快速上手" class="sidebar-link">快速上手</a></li></ul></li><li><a href="/reliable/zh/guide/integrate-with-gitlab-ci.html" class="sidebar-link">Gitlab CI 集成</a></li></ul></section></li><li><section class="sidebar-group depth-0"><p class="sidebar-heading"><span>社区支持</span> <!----></p> <ul class="sidebar-links sidebar-group-items"><li><a href="/reliable/zh/guide/presentations.html" class="sidebar-link">社区分享</a></li></ul></section></li></ul> </aside> <main class="page"> <div class="theme-default-content content__default"><h1 id="jenkins-android-任务配置"><a href="#jenkins-android-任务配置" class="header-anchor">#</a> Jenkins Android 任务配置</h1> <hr> <h2 id="依赖准备"><a href="#依赖准备" class="header-anchor">#</a> 依赖准备</h2> <h3 id="环境依赖"><a href="#环境依赖" class="header-anchor">#</a> 环境依赖</h3> <p>在 <code>reliable_home</code> 创建 <code>gradle_cache</code> 目录用于 Gradle 工具的缓存。</p> <div class="language-bash extra-class"><pre class="language-bash"><code>$ <span class="token function">mkdir</span> <span class="token environment constant">$HOME</span>/reliable_home/gradle_cache
+</code></pre></div><h3 id="docker-部署"><a href="#docker-部署" class="header-anchor">#</a> Docker 部署</h3> <p>就像 reliable-web 一样，Reliable 环境配置倾向于容器化，推荐你使用 Android Docker 容器运行任务。</p> <h2 id="示例工程"><a href="#示例工程" class="header-anchor">#</a> 示例工程</h2> <p><a href="//github.com/app-bootstrap/android-app-bootstrap">android-app-bootstrap</a></p> <h2 id="快速上手"><a href="#快速上手" class="header-anchor">#</a> 快速上手</h2> <h3 id="第1步-创建任务"><a href="#第1步-创建任务" class="header-anchor">#</a> 第1步 - 创建任务</h3> <p>创建一个项目名为 <code>android-app-bootstrap</code>，并且选择自由风格模式。</p> <div align="center"><img src="/reliable/assets/6d308bd9ly1ft2p8qmlazj21kw15ztol.jpg" width="75%"></div> <h3 id="第2步-scm-配置"><a href="#第2步-scm-配置" class="header-anchor">#</a> 第2步 - SCM 配置</h3> <div align="center"><img src="/reliable/assets/6d308bd9ly1ft2panw2oqj21kw15znaj.jpg" width="75%"></div> <p>输入项目的 git 地址，并且选择克隆深度为 1，分支为 <code>master</code>。</p> <div class="language- extra-class"><pre class="language-text"><code>https://github.com/app-bootstrap/android-app-bootstrap.git
+</code></pre></div><h3 id="第3步-构建脚本配置"><a href="#第3步-构建脚本配置" class="header-anchor">#</a> 第3步 - 构建脚本配置</h3> <div align="center"><img src="/reliable/assets/6d308bd9ly1ft2peam690j21kw15ztl8.jpg" width="75%"></div> <p><strong>注意</strong></p> <ul><li>请确保勾选构建前删除运行空间，以排除老的中间文件造成的问题。</li></ul> <div align="center"><img src="/reliable/assets/6d308bd9ly1ft2plz2djxj21kw16pk5j.jpg" width="75%"></div> <p>我们提供 Android 构建 Docker 镜像 <code>macacajs/macaca-android-build-docker</code>，你可以设置如下：</p> <div class="language- extra-class"><pre class="language-text"><code>docker stop $JOB_NAME || true &amp;&amp; docker rm -f $JOB_NAME || true
+
+docker run --rm \
+  --name $JOB_NAME \
+  -e JOB_NAME \
+  -e BUILD_NUMBER \
+  -e RELIABLE_SERVER_URL=http://192.168.0.102:9900 \
+  -v $WORKSPACE:/root/src \
+  -v $HOME/reliable_home/static:/static \
+  -v $HOME/reliable_home/gradle_cache:/root/.gradle \
+  macacajs/macaca-android-build-docker
+</code></pre></div><p><strong>注意</strong></p> <ul><li>也可以不使用容器而使用系统命令行直接进行构建。</li> <li>请确认 <code>RELIABLE_SERVER_URL</code> 已经正确配置，可以是一个 IPV4 或者某个 url，否则会遇到如下问题：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>error: TypeError: Cannot read property 'server' of undefined
+    at _.postToGW (/root/src/node_modules/reliable-cli/lib/helper.js:31:66)
+    at ReportCommand.pushToWebhook (/root/src/node_modules/reliable-cli/lib/report-command.js:130:18)
+    at ReportCommand._run (/root/src/node_modules/reliable-cli/lib/report-command.js:70:35)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! android-app-bootstrap@1.0.8 reliable: `reliable report -c ./reliable.config.js`
+npm ERR! Exit status 1
+</code></pre></div><h3 id="第4步-理解构建"><a href="#第4步-理解构建" class="header-anchor">#</a> 第4步 - 理解构建</h3> <div align="center"><img src="/reliable/assets/6d308bd9ly1ft2pvmld7dj21kw148wn3.jpg" width="75%"></div> <p>构建结束后，你可以在 reliable web 平台获得构建结果。</p> <div align="center"><img src="/reliable/assets/6d308bd9ly1ft2pvmlnkij21kw148dph.jpg" width="75%"></div> <p>比如我们能够获得 <code>android-app-bootstrap</code> 的 <code>debug</code> 类型包和 <code>release</code> 类型包。</p> <div align="center"><img src="/reliable/assets/6d308bd9ly1ft2pvmmewxj21kw14849j.jpg" width="75%"></div> <p>Reliable 平台也支持扫码下载安装等实用功能。</p> <div align="center"><img src="/reliable/assets/6d308bd9ly1ft2pvmlz1hj21kw148tl3.jpg" width="75%"></div> <p>我们也可以获得项目配置，版本等额外信息。如果需要更多上报信息可以参考上报脚本文档 <a href="//github.com/macacajs/reliable-cli#configuration">reliable-cli#configuration</a>。</p> <h3 id="第5步-自动化测试"><a href="#第5步-自动化测试" class="header-anchor">#</a> 第5步 - 自动化测试</h3> <p>Reliable 无缝集成 Macaca 自动化测试工具，支持通过率报告，端到端链路刻画，覆盖率等质量覆盖方案。</p> <p>配置敬请期待！</p></div> <footer class="page-edit"><div class="edit-link"><a href="https://github.com/macacajs/reliable/edit/master/docs/zh/guide/jenkins-android.md" target="_blank" rel="noopener noreferrer">在 GitHub 上编辑此页</a> <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></div> <div class="last-updated"><span class="prefix">上次更新:</span> <span class="time">5/23/2019, 3:46:54 AM</span></div></footer> <div class="page-nav"><p class="inner"><span class="prev">
+      ←
+      <a href="/reliable/zh/guide/jenkins-ios.html" class="prev">
+        Jenkins iOS 任务配置
+      </a></span> <span class="next"><a href="/reliable/zh/guide/integrate-with-gitlab-ci.html">
+        Gitlab CI 集成
+      </a>
+      →
+    </span></p></div> </main></div><div class="global-ui"></div></div>
+    <script src="/reliable/assets/js/app.696d9fd8.js" defer></script><script src="/reliable/assets/js/2.03079f86.js" defer></script><script src="/reliable/assets/js/21.9aba226d.js" defer></script>
+  </body>
+</html>

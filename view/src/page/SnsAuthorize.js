@@ -2,9 +2,7 @@ import React from 'react';
 import Script from 'react-load-script';
 import queryString from 'query-string';
 import safeGet from 'lodash.get';
-import {
-  Icon,
-} from 'antd';
+import { DingdingOutlined } from '@ant-design/icons';
 
 import ReliableLayout from '../components/ReliableLayout';
 
@@ -76,7 +74,7 @@ export default class Builds extends React.Component {
           textAlign: 'center',
         }}>
           <div style={{fontSize: '1rem'}}>Sign in with Dingtalk
-            <Icon type="dingding" style={{fontSize: '1.5rem'}}/>
+            <DingdingOutlined style={{fontSize: '1.5rem'}}/>
           </div>
           <div id="login_container"/>
         </div>

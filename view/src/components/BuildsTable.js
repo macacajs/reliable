@@ -5,11 +5,12 @@ import dayjs from 'dayjs';
 import { Link } from 'react-router-dom';
 import Clipboard from 'awesome-clipboard';
 import {
-  Icon,
   Table,
-  Popover,
-  message,
 } from 'antd';
+import {
+  SettingOutlined,
+  RightCircleOutlined,
+} from '@ant-design/icons';
 import { FormattedMessage } from 'react-intl';
 
 import {
@@ -56,7 +57,7 @@ export default class BuildsTable extends React.Component {
           href={record.configureUrl}
           target="_blank"
         >
-          <Icon type="setting" />
+          <SettingOutlined />
         </a>
         <a
           style={{
@@ -110,7 +111,7 @@ export default class BuildsTable extends React.Component {
               search: `?jobName=${record.jobName}&buildNumber=${record.buildNumber}`,
             }}
           >
-            <Icon type="right-circle" theme="outlined" />
+            <RightCircleOutlined />
           </Link>
           : ''
       );

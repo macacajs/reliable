@@ -2,13 +2,21 @@
 
 import React from 'react';
 import {
-  Icon,
   Menu,
   Avatar,
   Layout,
   Tooltip,
   Dropdown,
 } from 'antd';
+import {
+  MenuUnfoldOutlined,
+  MenuFoldOutlined,
+  BookOutlined,
+  QuestionCircleOutlined,
+  GlobalOutlined,
+  UserOutlined,
+  LogoutOutlined,
+} from '@ant-design/icons';
 import safeGet from 'lodash.get';
 import { FormattedMessage } from 'react-intl';
 import GitHubButton from 'react-github-button';
@@ -54,11 +62,17 @@ function ContentHeader (props) {
   );
   return (
     <Header style={{ background: '#fff', paddingLeft: '20px' }}>
-      <Icon
-        className="trigger"
-        type={props.collapsed ? 'menu-unfold' : 'menu-fold'}
-        onClick={toggle}
-      />
+      {props.collapsed ? (
+        <MenuUnfoldOutlined
+          className="trigger"
+          onClick={toggle}
+        />
+      ) : (
+        <MenuFoldOutlined
+          className="trigger"
+          onClick={toggle}
+        />
+      )}
       <div className="right">
         <span className="github-btn-container">
           <GitHubButton
@@ -72,7 +86,7 @@ function ContentHeader (props) {
             target="_blank"
             href={ pkg.links.document }
           >
-            <Icon type="book" />
+            <BookOutlined />
           </a>
         </Tooltip>
         <Tooltip title={<FormattedMessage id='header.issues' />}>
@@ -80,7 +94,7 @@ function ContentHeader (props) {
             target="_blank"
             href={ pkg.links.issues }
           >
-            <Icon type="question-circle-o" />
+            <QuestionCircleOutlined />
           </a>
         </Tooltip>
         <Dropdown overlay={menu} placement="topCenter">
@@ -89,7 +103,7 @@ function ContentHeader (props) {
             target="_blank"
             href={ pkg.links.issues }
           >
-            <Icon type="global" />
+            <GlobalOutlined />
           </a>
         </Dropdown>
         {
@@ -97,7 +111,7 @@ function ContentHeader (props) {
             <Menu className="nickname-menu">
               <Menu.Item>
                 <span>
-                  <Icon type="user" />
+                  <UserOutlined />
                   <span>{ nickName }</span>
                 </span>
               </Menu.Item>
@@ -106,7 +120,7 @@ function ContentHeader (props) {
                 location.href = '/snsAuthorize/signout';
               }}>
                 <span>
-                  <Icon type="logout" />
+                  <LogoutOutlined />
                   {'Sign out'}
                 </span>
               </Menu.Item>

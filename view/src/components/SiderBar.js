@@ -2,7 +2,15 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Layout, Menu, Icon } from 'antd';
+import {
+  Layout,
+  Menu,
+} from 'antd';
+import {
+  FlagOutlined,
+  LineChartOutlined,
+  SettingOutlined,
+} from '@ant-design/icons';
 import { FormattedMessage } from 'react-intl';
 
 const Sider = Layout.Sider;
@@ -37,7 +45,7 @@ export default class SiderBar extends React.Component {
         >
           <Menu.Item key="/">
             <Link to="/">
-              <Icon type="flag" />
+              <FlagOutlined />
               <span>
                 <FormattedMessage id='sidebar.buildinfo' />
               </span>
@@ -46,14 +54,14 @@ export default class SiderBar extends React.Component {
           <Menu.Item key="/insight">
             <Link to="/insight">
               <span>
-                <Icon type="line-chart" />
+                <LineChartOutlined />
                 <FormattedMessage id='sidebar.insight' />
               </span>
             </Link>
           </Menu.Item>
           <Menu.Item key="/setting">
             <Link to="/setting">
-              <Icon type="setting" />
+              <SettingOutlined />
               <span>
                 <FormattedMessage id='sidebar.setting' />
               </span>

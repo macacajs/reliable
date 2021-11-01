@@ -6,10 +6,10 @@ import { FormattedMessage } from 'react-intl';
 
 import {
   Table,
-  Icon,
   Modal,
   Popover,
 } from 'antd';
+import { QrcodeOutlined } from '@ant-design/icons';
 
 import safeGet from 'lodash.get';
 
@@ -48,8 +48,7 @@ export default class PkgTable extends React.Component {
       width: 160,
       render: (value, record) => (
         <span>
-          <Icon
-            type="qrcode"
+          <QrcodeOutlined
             style={{ fontSize: 20, color: '#38b8f3' }}
             onClick={this.showQrCodeModal.bind(this, record)}
           />

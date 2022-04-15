@@ -15,14 +15,15 @@
 ---
 
 [![build status][travis-image]][travis-url]
+[![CI][CI-image]][CI-url]
 [![Test coverage][codecov-image]][codecov-url]
 [![node version][node-image]][node-url]
 [![docker pull][docker-pull-image]][docker-url]
 [![docker layers][docker-layers-image]][docker-url]
 [![docker-size][docker-size-image]][docker-url]
 
-[travis-image]: https://travis-ci.com/macacajs/reliable.svg?branch=master
-[travis-url]: https://travis-ci.com/macacajs/reliable
+[CI-image]: https://github.com/macacajs/reliable/actions/workflows/ci.yml/badge.svg
+[CI-url]: https://github.com/macacajs/reliable/actions/workflows/ci.yml
 [codecov-image]: https://img.shields.io/codecov/c/github/macacajs/reliable/master.svg
 [codecov-url]: https://codecov.io/gh/macacajs/reliable
 [node-image]: https://img.shields.io/badge/node.js-%3E=_12-green.svg

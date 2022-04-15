@@ -14,7 +14,6 @@
 
 ---
 
-[![build status][travis-image]][travis-url]
 [![CI][CI-image]][CI-url]
 [![Test coverage][codecov-image]][codecov-url]
 [![node version][node-image]][node-url]

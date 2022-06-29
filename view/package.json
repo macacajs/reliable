@@ -52,7 +52,7 @@
     "lodash.get": "^4.4.2",
     "lodash.uniqby": "^4.7.0",
     "macaca-cli": "2",
-    "macaca-electron": "7",
+    "macaca-electron": "18",
     "macaca-wd": "3",
     "mini-css-extract-plugin": "^0.4.0",
     "postcss-loader": "^2.1.6",
@@ -69,6 +69,9 @@
     "react-router-dom": "^4.2.2",
     "style-loader": "^0.21.0",
     "stylelint": "^9.3.0",
+    "svg-sprite-loader": "^6.0.11",
+    "svgo": "^2.8.0",
+    "svgo-loader": "^3.0.0",
     "url-loader": "^1.1.2",
     "url-parse": "^1.4.3",
     "webpack": "^4.10.0",
@@ -80,6 +83,5 @@
   },
   "dependencies": {
     "dayjs": "^1.7.7"
-  },
-  "licenses": "MIT"
+  }
 }

@@ -43,6 +43,12 @@ const chooseLocale = () => {
       };
   }
 };
+
+const importAll = (r) => {
+  return r.keys().forEach(r);
+};
+importAll(require.context('./assets', false, /\.svg$/));
+
 const lang = chooseLocale();
 
 window.addEventListener('load', () => {

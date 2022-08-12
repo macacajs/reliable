@@ -42,7 +42,7 @@
 | :---: | :---: | :---: | :---: | :---: |
 
 
-This project follows the git-contributor [spec](https://github.com/xudafeng/git-contributor), auto updated at `Mon Nov 01 2021 21:58:05 GMT+0800`.
+This project follows the git-contributor [spec](https://github.com/xudafeng/git-contributor), auto updated at `Fri Aug 12 2022 11:07:28 GMT+0800`.
 
 <!-- GITCONTRIBUTOR_END -->
 

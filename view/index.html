@@ -22,11 +22,11 @@
         var assetsUrl = window.pageConfig.assetsUrl || '//' + location.hostname + ':' + location.port;
         var script = document.createElement('script');
         script.type = 'text/javascript';
-        script.src = assetsUrl + '/public/reliable-view.js';
+        script.src = assetsUrl + '/dist/reliable-view.js';
         var link = document.createElement('link');
         link.rel = 'stylesheet';
         link.type = 'text/css';
-        link.href = assetsUrl + '/public/reliable-view.css';
+        link.href = assetsUrl + '/dist/reliable-view.css';
         var head = document.getElementsByTagName('head')[0];
         head.appendChild(link);
         head.appendChild(script);

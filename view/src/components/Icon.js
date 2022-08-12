@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-function Icon(props) {
+function Icon (props) {
   const { className, type, width, height, fill, radius, style = {} } = props;
   return (
     <svg

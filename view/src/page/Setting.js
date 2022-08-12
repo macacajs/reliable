@@ -4,8 +4,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
 import {
-  Row,
-  Col,
   Card,
   Breadcrumb,
 } from 'antd';
@@ -13,8 +11,6 @@ import {
 import ReliableLayout from '../components/ReliableLayout';
 import SiteSetting from '../components/SiteSetting';
 import DingdingSetting from '../components/DingdingSetting';
-
-import pkg from '../../package.json';
 
 import './Setting.less';
 

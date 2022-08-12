@@ -1,5 +1,6 @@
 'use strict';
 
+const path = require('path');
 const dbConfig = require('../database/config');
 
 module.exports = appInfo => {
@@ -93,6 +94,12 @@ module.exports = appInfo => {
   };
 
   config.sequelize = dbConfig.development;
+
+  const distDirName = 'dist';
+  config.static = {
+    prefix: `/${distDirName}/`,
+    dir: path.resolve(__dirname, '..', 'view', distDirName),
+  };
 
   return config;
 };

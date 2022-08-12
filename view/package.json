@@ -11,20 +11,14 @@
     "document": "https://macacajs.github.io/reliable"
   },
   "scripts": {
-    "dev": "NODE_ENV=development webpack-dev-server --mode development",
-    "dev:test": "NODE_ENV=test webpack-dev-server --mode development",
+    "dev": "cross-env NODE_ENV=development webpack serve",
+    "dev:test": "NODE_ENV=test npm run dev",
     "serve": "npm run dev:test &",
     "test": "macaca run -d ./test",
     "lint": "eslint --fix . --ext jsx,js && stylelint --fix assets/**/*.less -s less",
-    "build": "NODE_ENV=production webpack -p --mode production",
-    "build:local": "DIST_DIR=./public npm run build",
-    "build:report": "npm run build --report",
-    "prepublishOnly": "npm run build:local",
-    "ci": "npm run lint && npm run build && npm run serve && npm test"
+    "build": "cross-env NODE_ENV=production webpack",
+    "prepublishOnly": "npm run build"
   },
-  "precommit": [
-    "lint"
-  ],
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",
     "@babel/core": "^7.0.0",
@@ -42,11 +36,14 @@
     "babel-loader": "^8.0.0",
     "babel-plugin-import": "^1.2.1",
     "babel-plugin-istanbul": "^5.0.1",
+    "cross-env": "^7.0.3",
     "css-loader": "^0.28.11",
+    "dayjs": "^1.7.7",
     "eslint": "^4.5.0",
     "eslint-config-antife": "^1.0.2",
     "eslint-plugin-mocha": "^5.0.0",
     "eslint-plugin-react": "^7.2.1",
+    "husky": "^1.3.1",
     "less": "^2.7.2",
     "less-loader": "^4.1.0",
     "lodash.get": "^4.4.2",
@@ -54,9 +51,8 @@
     "macaca-cli": "2",
     "macaca-electron": "18",
     "macaca-wd": "3",
-    "mini-css-extract-plugin": "^0.4.0",
+    "mini-css-extract-plugin": "^2.5.3",
     "postcss-loader": "^2.1.6",
-    "pre-commit": "^1.2.2",
     "qrcode-react": "^0.1.16",
     "query-string": "^6.2.0",
     "react": "^16.6.0",
@@ -74,14 +70,15 @@
     "svgo-loader": "^3.0.0",
     "url-loader": "^1.1.2",
     "url-parse": "^1.4.3",
-    "webpack": "^4.10.0",
-    "webpack-bundle-analyzer": "^3.3.2",
-    "webpack-cli": "^3.0.1",
-    "webpack-dev-server": "^3.1.4",
+    "webpack": "^5.69.1",
+    "webpack-cli": "^4.9.0",
+    "webpack-dev-server": "^4.7.4",
     "whatwg-fetch": "^2.0.3",
     "xutil": "1"
   },
-  "dependencies": {
-    "dayjs": "^1.7.7"
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
   }
 }

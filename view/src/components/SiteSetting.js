@@ -27,7 +27,7 @@ const buttonFormItemLayout = {
 };
 
 const SiteSetting = () => {
-  const [form]  = Form.useForm();
+  const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
 
   const fetchSite = async () => {
@@ -38,7 +38,7 @@ const SiteSetting = () => {
 
     const assetsUrl = safeGet(res, 'data.site.assetsUrl');
     form.setFieldsValue({
-      assetsUrl
+      assetsUrl,
     });
   };
 
@@ -91,7 +91,7 @@ const SiteSetting = () => {
       </Spin>
     </Form>
   );
-}
+};
 
 export default SiteSetting;
 

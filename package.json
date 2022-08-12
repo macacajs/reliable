@@ -33,9 +33,6 @@
     "uuid": "^3.3.2",
     "vuepress": "^1.8.2"
   },
-  "engines": {
-    "node": ">=8.9.0"
-  },
   "scripts": {
     "start": "NODE_ENV=production npm run db:migrate && eggctl start --port=9900 --title=egg-server-reliable-web",
     "stop": "eggctl stop --title=egg-server-reliable-web",

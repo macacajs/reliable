@@ -21,18 +21,6 @@
 
 [Reliable Offlice Site](//macacajs.github.io/reliable)
 
-<!-- GITCONTRIBUTOR_START -->
-
-## Contributors
-
-|[<img src="https://avatars.githubusercontent.com/u/1011681?v=4" width="100px;"/><br/><sub><b>xudafeng</b></sub>](https://github.com/xudafeng)<br/>|[<img src="https://avatars.githubusercontent.com/u/2139038?v=4" width="100px;"/><br/><sub><b>zhangyuheng</b></sub>](https://github.com/zhangyuheng)<br/>|[<img src="https://avatars.githubusercontent.com/u/4408102?v=4" width="100px;"/><br/><sub><b>YvonneZhang</b></sub>](https://github.com/YvonneZhang)<br/>|[<img src="https://avatars.githubusercontent.com/u/8198256?v=4" width="100px;"/><br/><sub><b>SamuelZhaoY</b></sub>](https://github.com/SamuelZhaoY)<br/>|[<img src="https://avatars.githubusercontent.com/u/1818483?v=4" width="100px;"/><br/><sub><b>ltianqi</b></sub>](https://github.com/ltianqi)<br/>|[<img src="https://avatars.githubusercontent.com/u/52845048?v=4" width="100px;"/><br/><sub><b>snapre</b></sub>](https://github.com/snapre)<br/>|
-| :---: | :---: | :---: | :---: | :---: | :---: |
-
-
-This project follows the git-contributor [spec](https://github.com/xudafeng/git-contributor), auto updated at `Thu Apr 28 2022 14:03:17 GMT+0800`.
-
-<!-- GITCONTRIBUTOR_END -->
-
 ## License
 
 The MIT License (MIT)

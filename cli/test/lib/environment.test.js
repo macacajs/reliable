@@ -20,7 +20,7 @@ describe('lib/enviroment', () => {
     process.env.BUILD_NUMBER = '141';
 
     const envData = enviroment();
-    console.log(envData.ci)
+    console.log(envData.ci);
 
     assert(envData.ci.JOB_NAME === 'task_force');
     assert(envData.ci.BUILD_NUMBER === '141');

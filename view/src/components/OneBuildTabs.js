@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import dayjs from 'dayjs';
+import moment from 'moment';
 import safeGet from 'lodash.get';
 import { Spin, Tabs } from 'antd';
 import { FormattedMessage } from 'react-intl';
@@ -36,7 +36,7 @@ export default class OneBuildTabs extends React.Component {
     };
     if (data && data.packages && data.packages.length && data.gitCommitInfo) {
       data.packages.forEach(item => {
-        data.gitCommitInfo.commitTime = dayjs(data.gitCommitInfo?.date).format('YYYY-MM-DD HH:mm:ss');
+        data.gitCommitInfo.commitTime = moment(data.gitCommitInfo?.date).format('YYYY-MM-DD HH:mm:ss');
         data.gitCommitInfo.gitHref = `${data.gitCommitInfo.gitUrl}/commit/${data.gitCommitInfo.hash}`;
         result.packages.push({
           ...item,
@@ -66,7 +66,7 @@ export default class OneBuildTabs extends React.Component {
         gitHref: `${data.gitCommitInfo.gitUrl}/commit/${data.gitCommitInfo.hash}`,
         committer: data.gitCommitInfo.author?.name,
         committerEmail: data.gitCommitInfo.author?.email,
-        commitTime: dayjs(data.gitCommitInfo?.date).format('YYYY-MM-DD HH:mm:ss'),
+        commitTime: moment(data.gitCommitInfo?.date).format('YYYY-MM-DD HH:mm:ss'),
       });
     }
     return result;

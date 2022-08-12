@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import dayjs from 'dayjs';
+import moment from 'moment';
 import { Link } from 'react-router-dom';
 import {
   Table,
@@ -78,7 +78,7 @@ export default class BuildsTable extends React.Component {
     dataIndex: 'buildEndTime',
     render: (text, record) => (
       <span>
-        {dayjs(text).format('YYYY-MM-DD HH:mm:ss')}
+        {moment(text).format('YYYY-MM-DD HH:mm:ss')}
       </span>
     ),
   }, {

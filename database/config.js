@@ -2,7 +2,7 @@
 
 const defaultConfig = {
   username: 'root',
-  password: 'reliable',
+  password: '',
   database: 'reliable_development',
   host: process.env.MYSQL_HOST || '127.0.0.1',
   port: process.env.MYSQL_PORT || '3306',

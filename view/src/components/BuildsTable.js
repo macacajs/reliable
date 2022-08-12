@@ -3,7 +3,6 @@
 import React from 'react';
 import dayjs from 'dayjs';
 import { Link } from 'react-router-dom';
-import Clipboard from 'awesome-clipboard';
 import {
   Table,
 } from 'antd';

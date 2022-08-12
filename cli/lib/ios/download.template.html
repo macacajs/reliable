@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+    <style>
+    h1 {
+      text-align: center;
+      margin-top: 40%;
+    }
+    </style>
+  </head>
+  <body>
+    <a href="itms-services://?action=download-manifest&url=<#= plistUrl #>">
+      <h1>click to download</h1>
+    </a>
+    <p>
+      built time: <span><#= time #></span>
+    </p>
+    <p>
+      url: <span><#= plistUrl #></span>
+    </p>
+  </body>
+</html>

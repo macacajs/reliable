@@ -1,0 +1,17 @@
+{
+  "source": {
+    "include": [
+      "lib",
+      "README.md"
+    ],
+    "includePattern": ".js$"
+  },
+  "opts": {
+    "destination": "./docs/",
+    "template": "node_modules/minami"
+  },
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false
+  }
+}

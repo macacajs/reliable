@@ -18,10 +18,11 @@ import {
 } from '../util/index';
 
 import './buildsTable.less';
+import { strUtil } from '../util/dataUtil';
 
 export default class BuildsTable extends React.Component {
   handleTableChange = (pagination, filters, sorter) => {
-    const pager = { ...this.props.pagination };
+    const pager = { ...this.props.pagination, ...pagination };
     pager.current = pagination.current;
     this.props.updatePagination(pager, this.props.jobName);
   }
@@ -49,7 +50,7 @@ export default class BuildsTable extends React.Component {
   }, {
     title: <FormattedMessage id='builds.buildNumber' />,
     dataIndex: 'buildNumber',
-    width: 160,
+    width: 200,
     render: (value, record) => (
       <span>
         <a
@@ -65,7 +66,7 @@ export default class BuildsTable extends React.Component {
           href={record.buildUrl}
           target="_blank"
         >
-          {value}
+          {strUtil.cutStrTail(15, value)}
         </a>
       </span>
     ),
@@ -94,7 +95,7 @@ export default class BuildsTable extends React.Component {
     width: 120,
     render: (text, record) =>
       <span>
-        {record.gitCommitInfo.committer.name}
+        {record.gitCommitInfo.author?.name}
       </span>,
   }, {
     title: <FormattedMessage id='builds.detailInfo' />,

@@ -31,19 +31,6 @@ export const logger = (...content) => {
   console.log(...content);
 };
 
-export const getBuildLink = (data, target) => {
-  // TODO remove
-
-  if (!target) {
-    return '';
-  };
-
-  if (target.startsWith('http://') || target.startsWith('https://')) {
-    return target;
-  }
-  return;
-};
-
 export const mapBuildDataToColor = data => {
   const state = data && data.state;
   if (state === 'INIT') return;

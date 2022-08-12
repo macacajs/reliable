@@ -59,12 +59,11 @@ export default async (url, method = 'GET', params = {}) => {
     const data = await res.json();
     if (data.url) {
       location.href = url;
-      return;
     }
   } else {
     return {
       success: false,
       message: 'Network Errror',
     };
-  };
+  }
 };

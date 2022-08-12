@@ -2,7 +2,7 @@
 
 // key: error code
 // value: error details
-//   value.message: default error message
+// value.message: default error message
 module.exports = new Map([
   [
     'ERR_RELIABLE_INTERNAL_SERVER_ERROR', {

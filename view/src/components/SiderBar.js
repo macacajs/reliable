@@ -12,7 +12,6 @@ import {
   SettingOutlined,
 } from '@ant-design/icons';
 import { FormattedMessage } from 'react-intl';
-import Icon from './Icon';
 
 const Sider = Layout.Sider;
 
@@ -33,10 +32,7 @@ export default class SiderBar extends React.Component {
       >
         <div className="logo">
           <Link to="/">
-            <Icon
-              width={30}
-              type="logo"
-            />
+            <img alt="logo" src="https://macacajs.github.io/reliable/logo/reliable.svg" />
             <h1>Reliable</h1>
           </Link>
         </div>

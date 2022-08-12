@@ -60,7 +60,7 @@ class InsightController extends Controller {
           'createdAt',
           'finishedAt',
         ],
-        limit: 100,
+        limit: 5,
         order: [[ 'createdAt', 'DESC' ]],
       };
       if (allBranches === 'N') {
@@ -78,7 +78,7 @@ class InsightController extends Controller {
       if (res.length === 0) return null;
 
       const lastCommit = {
-        committer: ctx.safeGet(res, '[0].data.gitCommitInfo.committer.name'),
+        committer: ctx.safeGet(res, '[0].data.gitCommitInfo.author'),
         shortHash: ctx.safeGet(res, '[0].data.gitCommitInfo.shortHash'),
         commitUrl: this._getCommitUrl(res[0]),
       };

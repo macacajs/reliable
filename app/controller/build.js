@@ -32,6 +32,10 @@ class BuildController extends Controller {
           jobName,
           buildNumber,
         });
+        // 如果没有git提交时间，用报告创建时间替代
+        if (!res.data.data.gitCommitInfo.date) {
+          res.data.data.gitCommitInfo.date = res.data.createdAt;
+        }
       } else {
         res = await ctx.service.build.queryByJobName({
           jobName,
@@ -51,6 +55,42 @@ class BuildController extends Controller {
     ctx.body = res;
   }
 
+  /**
+   * 查询最近的报告
+   */
+  async queryLatest() {
+    const { ctx } = this;
+    const Sequelize = ctx.app.Sequelize;
+    const Op = Sequelize.Op;
+    const { jobName, gitBranch, subJobName } = ctx.request.body;
+    const query = {
+      limit: 5,
+      where: {},
+      order: [
+        [
+          'createdAt',
+          'DESC',
+        ],
+      ],
+    };
+    if (jobName) {
+      query.where.jobName = jobName.replace('__', '/');
+    }
+    if (gitBranch) {
+      query.where.gitBranch = gitBranch;
+    }
+    if (subJobName) {
+      // "subJobName": xxx
+      query.where.extendInfo = {
+        [Op.like]: Sequelize.literal(`\'%"${subJobName}"%\'`),
+      };
+    }
+    const result = await this.ctx.model.Build.findAll(query);
+    ctx.success({
+      result,
+    });
+  }
+
   async queryLatestByJobNameAndGitBranch() {
     const jobName = this.ctx.params.jobName;
     const gitBranch = this.ctx.params.gitBranch;
@@ -59,6 +99,25 @@ class BuildController extends Controller {
       where: {
         jobName: jobName.replace('__', '/'),
         gitBranch,
+      },
+      order: [
+        [
+          'createdAt',
+          'DESC',
+        ],
+      ],
+    });
+    this.ctx.success({
+      result,
+    });
+  }
+
+  async queryLatestByJobName() {
+    const jobName = this.ctx.params.jobName;
+    const result = await this.ctx.model.Build.findAll({
+      limit: 3,
+      where: {
+        jobName: jobName.replace('__', '/'),
       },
       order: [
         [

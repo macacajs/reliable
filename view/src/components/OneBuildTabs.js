@@ -1,7 +1,7 @@
 'use strict';
 
 import React from 'react';
-import dayjs from 'dayjs';
+import moment from 'moment';
 import safeGet from 'lodash.get';
 import { Spin, Tabs } from 'antd';
 import { FormattedMessage } from 'react-intl';
@@ -10,8 +10,6 @@ import PkgTable from './PkgTable';
 import TestTable from './TestTable';
 import ExtraTable from './ExtraTable';
 import FileTable from './FileTable';
-
-import { getBuildLink } from '../util';
 
 const TabPane = Tabs.TabPane;
 
@@ -38,12 +36,11 @@ export default class OneBuildTabs extends React.Component {
     };
     if (data && data.packages && data.packages.length && data.gitCommitInfo) {
       data.packages.forEach(item => {
-        const commitTime = data.gitCommitInfo.committer.date * 1000;
-        data.gitCommitInfo.commitTime = dayjs(commitTime).format('YYYY-MM-DD HH:mm:ss');
+        data.gitCommitInfo.commitTime = moment(data.gitCommitInfo?.date).format('YYYY-MM-DD HH:mm:ss');
         data.gitCommitInfo.gitHref = `${data.gitCommitInfo.gitUrl}/commit/${data.gitCommitInfo.hash}`;
         result.packages.push({
           ...item,
-          download: getBuildLink(this.props.data, item.path),
+          download: item.path || '',
           gitCommitInfo: data.gitCommitInfo,
           buildUniqId: data.buildUniqId,
         });
@@ -55,22 +52,21 @@ export default class OneBuildTabs extends React.Component {
   getTestInfo () {
     const data = this.props.data;
     const result = [];
-    if (data && data.testInfo && data.testInfo.tests) {
+    if (data && data.testInfo) {
       const report = data.testInfo.testHtmlReporterPath;
       const coverage = data.testInfo.coverageHtmlReporterPath;
-      const commitTime = data.gitCommitInfo.committer.date * 1000;
       result.push({
         lineCoverage: data.testInfo.linePercent,
         passingRate: data.testInfo.passPercent,
         testInfo: data.testInfo,
-        testReporter: getBuildLink(this.props.data, report),
-        coverageReporter: getBuildLink(this.props.data, coverage),
+        testReporter: report || '',
+        coverageReporter: coverage || '',
         gitBranch: data.gitCommitInfo.gitBranch,
         gitCommit: data.gitCommitInfo.shortHash,
         gitHref: `${data.gitCommitInfo.gitUrl}/commit/${data.gitCommitInfo.hash}`,
-        committer: data.gitCommitInfo.committer.name,
-        committerEmail: data.gitCommitInfo.committer.email,
-        commitTime: dayjs(commitTime).format('YYYY-MM-DD HH:mm:ss'),
+        committer: data.gitCommitInfo.author?.name,
+        committerEmail: data.gitCommitInfo.author?.email,
+        commitTime: moment(data.gitCommitInfo?.date).format('YYYY-MM-DD HH:mm:ss'),
       });
     }
     return result;
@@ -83,7 +79,7 @@ export default class OneBuildTabs extends React.Component {
       data.files.forEach(item => {
         result.push({
           fileName: item,
-          fileAddress: getBuildLink(this.props.data, item),
+          fileAddress: item || '',
         });
       });
     }

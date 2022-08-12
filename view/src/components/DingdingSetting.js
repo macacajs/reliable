@@ -94,8 +94,8 @@ const DingdingSetting = () => {
                   <Form.Item
                     {...field}
                     {...webhookFormItemLayout}
-                    name={[field.name, 'url']}
-                    fieldKey={[field.fieldKey, 'url']}
+                    name={[field?.name, 'url']}
+                    fieldKey={[field?.fieldKey, 'url']}
                     validateTrigger={['onBlur']}
                     rules={[{
                       required: true,
@@ -107,7 +107,7 @@ const DingdingSetting = () => {
                     <Input
                       addonBefore={
                         <Form.Item
-                          name={[field.name, 'tag']}
+                          name={[field?.name, 'tag']}
                           initialValue="build"
                           noStyle
                         >
@@ -122,7 +122,7 @@ const DingdingSetting = () => {
                           style={{
                             cursor: 'pointer',
                           }}
-                          onClick={() => remove(field.name)}
+                          onClick={() => remove(field?.name)}
                         />
                       }
                     />

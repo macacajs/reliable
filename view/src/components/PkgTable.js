@@ -76,10 +76,10 @@ export default class PkgTable extends React.Component {
           <Popover content={
             <ul className="commit-pop-block">
               <li>
-            committer name: { safeGet(record, 'gitCommitInfo.committer.name') }
+            committer name: { safeGet(record, 'gitCommitInfo.author.name') }
               </li>
               <li>
-            committer email: { safeGet(record, 'gitCommitInfo.committer.email') }
+            committer email: { safeGet(record, 'gitCommitInfo.author.email') }
               </li>
               <li>
             author name: { safeGet(record, 'gitCommitInfo.author.name') }
@@ -100,7 +100,7 @@ export default class PkgTable extends React.Component {
               target="_blank"
             >
               {record.gitCommitInfo.shortHash}
-            </a> {record.gitCommitInfo.committer.name}
+            </a> {record.gitCommitInfo.author?.name}
           </Popover>
         );
       },
@@ -171,7 +171,7 @@ export default class PkgTable extends React.Component {
               ${safeGet(this.state.record, 'gitCommitInfo.commitTime')} |
               ${safeGet(this.state.record, 'gitCommitInfo.shortHash')} |
               ${safeGet(this.state.record, 'gitCommitInfo.gitBranch')} |
-              ${safeGet(this.state.record, 'gitCommitInfo.committer.name')}`
+              ${safeGet(this.state.record, 'gitCommitInfo.author.name')}`
             }
           </div>
         </Modal>

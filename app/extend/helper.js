@@ -46,7 +46,7 @@ module.exports = {
     text.push(`#### Platform: ${environment.platform}`);
     text.push('#### Commit');
     text.push(`[${gitCommitInfo.shortHash}](${gitUrl}/commit/${gitCommitInfo.hash}): ${gitCommitInfo.subject}`);
-    text.push(`> committer:[@${gitCommitInfo.committer.name}]() author:[@${gitCommitInfo.author.name}]()`);
+    text.push(`> committer:[@${gitCommitInfo.author.name}]() author:[@${gitCommitInfo.author.name}]()`);
 
     // test report info
 

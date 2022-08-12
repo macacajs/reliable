@@ -122,13 +122,15 @@ export default class Builds extends React.Component {
     }, {
       title: <FormattedMessage id='insight.test.lineCoverage.latest' />,
       dataIndex: 'linePercentList[0].linePercent',
+      key: 'latestLinePercent',
       render: (text, record) => {
+        const pct = record.linePercentList[0].linePercent;
         const coverageUrl = safeGet(record, 'linePercentList[0].coverageUrl');
-        if (!text) {
+        if (!pct) {
           return '-';
         }
         return <a target="_blank" href={coverageUrl}>
-          {text}%
+          {pct}%
         </a>;
       },
     }, {
@@ -234,47 +236,6 @@ export default class Builds extends React.Component {
           : '-';
       },
     }, {
-      title: <FormattedMessage id='insight.test.duration' />,
-      dataIndex: 'humanizeDuration',
-      render: (text, record) => {
-        return record.humanizeDuration
-          ? <Popover
-            placement="right"
-            title={<FormattedMessage id='insight.test.duration.history' />}
-            content={
-              <Table
-                size="small"
-                dataSource={record.durationList}
-                columns={[
-                  {
-                    title: 'Commit',
-                    dataIndex: 'commitUrl',
-                    key: 'commitUrl',
-                    render: (text, record) => {
-                      return <a target="_blank" href={text}>{record.shortHash}</a>;
-                    },
-                  },
-                  {
-                    title: 'Duration',
-                    dataIndex: 'duration',
-                    key: 'duration',
-                    align: 'right',
-                  },
-                  {
-                    title: 'CreatedAt',
-                    dataIndex: 'createdAt',
-                    key: 'createdAt',
-                    align: 'right',
-                  },
-                ]}
-              />
-            }
-          >
-            <a>{record.humanizeDuration}</a>
-          </Popover>
-          : '-';
-      },
-    }, {
       title: <FormattedMessage id='insight.committer' />,
       dataIndex: 'committer',
       render: (text, record) =>
@@ -282,7 +243,7 @@ export default class Builds extends React.Component {
           target="_blank"
           href={record.lastCommit.commitUrl}
           style={{marginLeft: '4px'}}
-        >{ record.lastCommit.committer }</a>,
+        >{ record.lastCommit.committer.name }</a>,
     }];
   }
 

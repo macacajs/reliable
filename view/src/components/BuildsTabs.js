@@ -74,13 +74,14 @@ class BuildsTabs extends React.Component {
     Object.assign(pager, pagination);
     this.setState({
       pagination: pager,
+    }, () => {
+      this.fetch(pagination, tab);
     });
-    this.fetch(pagination, tab);
   }
 
   fetch = (pager, tab) => {
     const param = {
-      num: this.state.pagination.pageSize,
+      num: pager && pager.pageSize || this.state.pagination.pageSize,
       page: pager && pager.current || 1,
       jobName: tab,
     };

@@ -68,6 +68,7 @@ class GwController extends Controller {
         gitBranch,
         data,
         state,
+        extendInfo: data.extendInfo || {},
       });
     }
 

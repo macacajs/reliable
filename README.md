@@ -48,7 +48,6 @@ This project follows the git-contributor [spec](https://github.com/xudafeng/git-
 
 ## Docs
 
-- [CLI Usage](//github.com/macacajs/reliable-cli)
 - [Development](./docker/reliable-web#development)
 
 ## License

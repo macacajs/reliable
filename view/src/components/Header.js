@@ -30,7 +30,7 @@ import { LANG_LIST as langList } from '../constants/index';
 const nickName = safeGet(window, 'context.user.nick');
 const Header = Layout.Header;
 
-const pkg = require('../../package.json');
+const { siteConfig } = window.pageConfig;
 
 function ContentHeader (props) {
   const toggle = () => {
@@ -84,7 +84,7 @@ function ContentHeader (props) {
         <Tooltip title={<FormattedMessage id='header.document' />}>
           <a
             target="_blank"
-            href={ pkg.links.document }
+            href={ siteConfig.links.document }
           >
             <BookOutlined />
           </a>
@@ -92,19 +92,15 @@ function ContentHeader (props) {
         <Tooltip title={<FormattedMessage id='header.issues' />}>
           <a
             target="_blank"
-            href={ pkg.links.issues }
+            href={ siteConfig.links.issues }
           >
             <QuestionCircleOutlined />
           </a>
         </Tooltip>
         <Dropdown overlay={menu} placement="topCenter">
-          <a
-            rel="noopener noreferrer"
-            target="_blank"
-            href={ pkg.links.issues }
-          >
+          <span style={{ margin: 8, color: '#1890ff', cursor: 'pointer' }}>
             <GlobalOutlined />
-          </a>
+          </span>
         </Dropdown>
         {
           nickName && <Dropdown overlay={

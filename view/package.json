@@ -7,10 +7,6 @@
     "public/*.css"
   ],
   "private": true,
-  "links": {
-    "issues": "https://github.com/macacajs/reliable/issues?utf8=%E2%9C%93&q=",
-    "document": "https://macacajs.github.io/reliable"
-  },
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack serve",
     "dev:test": "NODE_ENV=test npm run dev",

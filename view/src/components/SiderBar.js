@@ -15,6 +15,8 @@ import { FormattedMessage } from 'react-intl';
 
 const Sider = Layout.Sider;
 
+const { siteConfig } = window.pageConfig;
+
 export default class SiderBar extends React.Component {
   handleMenuClick (e) {
     this.setState({
@@ -27,17 +29,16 @@ export default class SiderBar extends React.Component {
       <Sider
         trigger={null}
         collapsible
-        width="200px"
+        theme="light"
         collapsed={this.props.collapsed}
       >
         <div className="logo">
           <Link to="/">
-            <img alt="logo" src="https://macacajs.github.io/reliable/logo/reliable.svg" />
-            <h1>Reliable</h1>
+            <img alt="logo" src={siteConfig.logo} />
+            <h1>{siteConfig.name}</h1>
           </Link>
         </div>
         <Menu
-          theme="dark"
           mode="inline"
           defaultSelectedKeys={[location.pathname]}
           defaultOpenKeys={[location.pathname]}

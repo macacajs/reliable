@@ -1,19 +1,33 @@
 name: CI
 
 on:
-  # allows to manually run the job at any time
   workflow_dispatch:
   
   push:
     branches:
       - '**'
+    paths-ignore:
+      - '**.md'
+      - 'docs/**'
+      - 'logo/**'
 
 jobs:
   test:
     name: 'Run Unit Test: node-16, ubuntu-latest'
     timeout-minutes: 10
     runs-on: ubuntu-latest
+
+    env:
+      DB_DATABASE: reliable_unittest
+      DB_USER: root
+      DB_PASSWORD: root
+
     steps:
+      - name: Setup MySQL
+        run: |
+          sudo /etc/init.d/mysql start
+          mysql -e 'CREATE DATABASE ${{ env.DB_DATABASE }};' -u${{ env.DB_USER }} -p${{ env.DB_PASSWORD }}
+
       - name: Checkout
         uses: actions/checkout@v3
         with:
@@ -21,12 +35,6 @@ jobs:
 
       - name: Setup docker
         uses: docker-practice/actions-setup-docker@1.0.9
-
-      - name: Docker pull macacajs/reliable-mysql
-        run: |
-          docker pull macacajs/reliable-mysql
-          docker run --rm --name reliable-mysql -p 13306:3306 -d macacajs/reliable-mysql
-          docker ps -a
 
       - name: Set node version to 16
         uses: actions/setup-node@v3
@@ -38,8 +46,6 @@ jobs:
 
       - name: Run ci
         run: npm run ci
-        env:
-          MYSQL_PORT: 13306
 
       - name: Codecov
         uses: codecov/codecov-action@v3.0.0

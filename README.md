@@ -18,8 +18,6 @@
 [![Test coverage][codecov-image]][codecov-url]
 [![node version][node-image]][node-url]
 [![docker pull][docker-pull-image]][docker-url]
-[![docker layers][docker-layers-image]][docker-url]
-[![docker-size][docker-size-image]][docker-url]
 
 [CI-image]: https://github.com/macacajs/reliable/actions/workflows/ci.yml/badge.svg
 [CI-url]: https://github.com/macacajs/reliable/actions/workflows/ci.yml
@@ -28,8 +26,6 @@
 [node-image]: https://img.shields.io/badge/node.js-%3E=_12-green.svg
 [node-url]: http://nodejs.org/download/
 [docker-pull-image]: https://img.shields.io/docker/pulls/macacajs/reliable-web.svg?logo=dockbit
-[docker-layers-image]: https://img.shields.io/microbadger/layers/macacajs/reliable-web.svg?logo=dockbit
-[docker-size-image]: https://img.shields.io/microbadger/image-size/macacajs/reliable-web.svg?logo=dockbit
 [docker-url]: https://hub.docker.com/r/macacajs/reliable-web/
 
 > Testing management suite with continuous delivery support.

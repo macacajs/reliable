@@ -100,4 +100,13 @@ config.static = {
   dir: path.resolve(__dirname, '..', 'view', distDirName),
 };
 
+config.site = {
+  logo: 'https://macacajs.github.io/reliable/logo/reliable.svg',
+  name: 'Reliable',
+  links: {
+    document: 'https://macacajs.github.io/reliable',
+    issues: 'https://github.com/macacajs/reliable/issues?utf8=%E2%9C%93&q=',
+  },
+};
+
 module.exports = config;

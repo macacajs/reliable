@@ -147,7 +147,7 @@ class BuildsTabs extends React.Component {
           onTabClick={this.handleTabClick}
           style={{ height: 'auto' }}
         >
-          <TabPane tab={<FormattedMessage id='sidebar.allbuilds' />} key="">
+          <TabPane tab={<><FormattedMessage id='sidebar.allbuilds' /> ({allJobName.length})</>} key="">
           </TabPane>
           { listItems }
         </Tabs>

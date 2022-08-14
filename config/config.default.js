@@ -109,4 +109,9 @@ config.site = {
   },
 };
 
+config.admin = {
+  userKey: '',
+  list: [],
+};
+
 module.exports = config;

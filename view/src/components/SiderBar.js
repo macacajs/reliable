@@ -15,7 +15,7 @@ import { FormattedMessage } from 'react-intl';
 
 const Sider = Layout.Sider;
 
-const { siteConfig } = window.pageConfig;
+const { siteConfig, user } = window.pageConfig;
 
 export default class SiderBar extends React.Component {
   handleMenuClick (e) {
@@ -60,14 +60,16 @@ export default class SiderBar extends React.Component {
               </span>
             </Link>
           </Menu.Item>
-          <Menu.Item key="/setting">
-            <Link to="/setting">
-              <SettingOutlined />
-              <span>
-                <FormattedMessage id='sidebar.setting' />
-              </span>
-            </Link>
-          </Menu.Item>
+          {user.isAdmin && (
+            <Menu.Item key="/setting">
+              <Link to="/setting">
+                <SettingOutlined />
+                <span>
+                  <FormattedMessage id='sidebar.setting' />
+                </span>
+              </Link>
+            </Menu.Item>
+          )}
         </Menu>
       </Sider>
     );

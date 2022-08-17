@@ -20,5 +20,7 @@ module.exports = () => {
     enable: false,
     defaultHost: '',
   };
+
+  // inject-extra-config
   return config;
 };

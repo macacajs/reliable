@@ -33,11 +33,8 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Install deps
-        run: npm install
-
       - name: Run ci
-        run: npm run ci
+        run: sh ./ci.sh
         env:
           MYSQL_PORT: 13306
 

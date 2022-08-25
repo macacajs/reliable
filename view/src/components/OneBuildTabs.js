@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import safeGet from 'lodash.get';
+import safeGet from 'lodash/get';
 import { Spin, Tabs } from 'antd';
 import { FormattedMessage } from 'react-intl';
 

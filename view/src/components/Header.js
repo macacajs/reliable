@@ -15,7 +15,7 @@ import {
   UserOutlined,
   LogoutOutlined,
 } from '@ant-design/icons';
-import safeGet from 'lodash.get';
+import safeGet from 'lodash/get';
 import { FormattedMessage } from 'react-intl';
 import GitHubButton from 'react-github-button';
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { Tabs } from 'antd';
 import { withRouter } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';
-import safeGet from 'lodash.get';
+import safeGet from 'lodash/get';
 
 import request from '../util/request';
 import BuildsTable from './BuildsTable';

@@ -9,7 +9,7 @@ import {
 } from 'antd';
 import { QrcodeOutlined } from '@ant-design/icons';
 
-import safeGet from 'lodash.get';
+import safeGet from 'lodash/get';
 
 import {
   getUuid,

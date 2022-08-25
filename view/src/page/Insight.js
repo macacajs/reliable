@@ -14,7 +14,7 @@ import {
   BulbOutlined,
 } from '@ant-design/icons';
 import React from 'react';
-import safeGet from 'lodash.get';
+import safeGet from 'lodash/get';
 
 import { Link } from 'react-router-dom';
 import { FormattedMessage } from 'react-intl';

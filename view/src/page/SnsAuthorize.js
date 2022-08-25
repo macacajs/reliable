@@ -1,7 +1,7 @@
 import React from 'react';
 import Script from 'react-load-script';
 import queryString from 'query-string';
-import safeGet from 'lodash.get';
+import safeGet from 'lodash/get';
 import { DingdingOutlined } from '@ant-design/icons';
 
 import ReliableLayout from '../components/ReliableLayout';

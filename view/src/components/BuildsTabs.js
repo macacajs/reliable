@@ -1,5 +1,3 @@
-'use strict';
-
 import React from 'react';
 import { Tabs } from 'antd';
 import { withRouter } from 'react-router-dom';
@@ -13,7 +11,7 @@ import {
 } from '../constants/index';
 import { logger, queryParse } from '../util/index';
 
-const TabPane = Tabs.TabPane;
+const { TabPane } = Tabs;
 
 class BuildsTabs extends React.Component {
   state = {
@@ -26,20 +24,20 @@ class BuildsTabs extends React.Component {
     },
   };
 
-  getBuildsInfo (res) {
+  getBuildsInfo(res) {
     const result = [];
     res.forEach(item => {
       // common fields
-      const jobName = item.jobName;
-      const buildNumber = item.buildNumber;
-      const platform = item.data.environment.platform;
+      const { jobName } = item;
+      const { buildNumber } = item;
+      const { platform } = item.data.environment;
       const buildEndTime = item.createdAt;
-      const testInfo = item.data.testInfo;
-      const gitCommitInfo = item.data.gitCommitInfo;
+      const { testInfo } = item.data;
+      const { gitCommitInfo } = item.data;
       const buildUniqId = item.uniqId;
-      const hasDeployed = Array.isArray(item.deploys) &&
-        item.deploys.some(deploy => deploy.state === 'SUCCESS');
-      const state = item.state;
+      const hasDeployed = Array.isArray(item.deploys)
+        && item.deploys.some(deploy => { return deploy.state === 'SUCCESS'; });
+      const { state } = item;
 
       const formattedItem = {
         buildNumber,
@@ -125,7 +123,7 @@ class BuildsTabs extends React.Component {
     this.updatePagination(pagination, tab);
   }
 
-  componentDidMount () {
+  componentDidMount() {
     const tab = queryParse(location.search).jobName;
     this.setState({
       jobName: tab,
@@ -133,21 +131,20 @@ class BuildsTabs extends React.Component {
     this.fetch({ ...this.state.pagination }, tab);
   }
 
-  render () {
-    const allJobName = this.state.allJobName;
-    const listItems = allJobName && allJobName.map(item =>
-      <TabPane tab={item} key={item}></TabPane>
+  render() {
+    const { allJobName } = this.state;
+    const listItems = allJobName && allJobName.map(item => { return <TabPane tab={item} key={item}></TabPane>; }
     );
     return (
       <div>
         { listItems }
         <Tabs
-          activeKey={ this.state.jobName || '' }
+          activeKey={this.state.jobName || ''}
           tabPosition="top"
           onTabClick={this.handleTabClick}
           style={{ height: 'auto' }}
         >
-          <TabPane tab={<><FormattedMessage id='sidebar.allbuilds' /> ({allJobName.length})</>} key="">
+          <TabPane tab={<><FormattedMessage id="sidebar.allbuilds" /> ({allJobName.length})</>} key="">
           </TabPane>
           { listItems }
         </Tabs>

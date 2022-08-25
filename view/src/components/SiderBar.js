@@ -1,5 +1,3 @@
-'use strict';
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import {
@@ -13,18 +11,18 @@ import {
 } from '@ant-design/icons';
 import { FormattedMessage } from 'react-intl';
 
-const Sider = Layout.Sider;
+const { Sider } = Layout;
 
 const { siteConfig, user } = window.pageConfig;
 
 export default class SiderBar extends React.Component {
-  handleMenuClick (e) {
+  handleMenuClick(e) {
     this.setState({
       currentPath: e.key,
     });
   }
 
-  render () {
+  render() {
     return (
       <Sider
         trigger={null}
@@ -48,7 +46,7 @@ export default class SiderBar extends React.Component {
             <Link to="/">
               <FlagOutlined />
               <span>
-                <FormattedMessage id='sidebar.buildinfo' />
+                <FormattedMessage id="sidebar.buildinfo" />
               </span>
             </Link>
           </Menu.Item>
@@ -56,7 +54,7 @@ export default class SiderBar extends React.Component {
             <Link to="/insight">
               <span>
                 <LineChartOutlined />
-                <FormattedMessage id='sidebar.insight' />
+                <FormattedMessage id="sidebar.insight" />
               </span>
             </Link>
           </Menu.Item>
@@ -65,7 +63,7 @@ export default class SiderBar extends React.Component {
               <Link to="/setting">
                 <SettingOutlined />
                 <span>
-                  <FormattedMessage id='sidebar.setting' />
+                  <FormattedMessage id="sidebar.setting" />
                 </span>
               </Link>
             </Menu.Item>
@@ -75,4 +73,3 @@ export default class SiderBar extends React.Component {
     );
   }
 }
-

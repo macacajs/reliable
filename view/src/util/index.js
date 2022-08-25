@@ -1,5 +1,3 @@
-'use strict';
-
 export const queryParse = url => {
   const qs = {};
   if (!url) {

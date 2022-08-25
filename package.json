@@ -44,7 +44,6 @@
     "test:debug": "DEBUG=reliable* egg-bin test",
     "cov": "npm run db:prepare:test && egg-bin cov",
     "lint": "eslint . --fix",
-    "ci": "npm run lint && npm run cov",
     "autod": "autod",
     "build:docker": "docker build --no-cache --pull -t macacajs/reliable-web .",
     "db:prepare:test": "NODE_ENV=test npm run db:migrate:undo:all && NODE_ENV=test npm run db:migrate",

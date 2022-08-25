@@ -1,5 +1,3 @@
-'use strict';
-
 import React, { useEffect, useState } from 'react';
 import safeGet from 'lodash.get';
 import { FormattedMessage } from 'react-intl';
@@ -26,7 +24,7 @@ const buttonFormItemLayout = {
   },
 };
 
-const SiteSetting = () => {
+function SiteSetting() {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
 
@@ -63,7 +61,7 @@ const SiteSetting = () => {
     form.validateFields().then(values => {
       postSite(values);
     }).catch(errorInfo => {
-      return;
+
     });
   };
 
@@ -85,13 +83,12 @@ const SiteSetting = () => {
             htmlType="submit"
             onClick={updateSite}
           >
-            <FormattedMessage id='setting.submit' />
+            <FormattedMessage id="setting.submit" />
           </Button>
         </Form.Item>
       </Spin>
     </Form>
   );
-};
+}
 
 export default SiteSetting;
-

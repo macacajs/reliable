@@ -1,5 +1,3 @@
-'use strict';
-
 import React, { useEffect, useState } from 'react';
 import safeGet from 'lodash.get';
 import uniqBy from 'lodash.uniqby';
@@ -19,7 +17,7 @@ import {
 
 import request from '../util/request';
 
-const Option = Select.Option;
+const { Option } = Select;
 
 const webhookFormItemLayout = {
   wrapperCol: {
@@ -34,7 +32,7 @@ const buttonFormItemLayout = {
   },
 };
 
-const DingdingSetting = () => {
+function DingdingSetting() {
   const [form] = Form.useForm();
   const [loading, setLoading] = useState(false);
 
@@ -49,12 +47,12 @@ const DingdingSetting = () => {
       form.setFieldsValue({
         webhooks: [{
           url: '',
-        }]
+        }],
       });
       return;
     }
 
-    form.setFieldsValue({ webhooks })
+    form.setFieldsValue({ webhooks });
   };
 
   useEffect(() => {
@@ -75,7 +73,7 @@ const DingdingSetting = () => {
   };
 
   const updateWebhooks = values => {
-    const uniqWebhooks = uniqBy(values.webhooks, value => `${value.tag}${value.url}`);
+    const uniqWebhooks = uniqBy(values.webhooks, value => { return `${value.tag}${value.url}`; });
     postWebhooks(uniqWebhooks);
   };
 
@@ -87,64 +85,68 @@ const DingdingSetting = () => {
         autoComplete="off"
       >
         <Form.List name="webhooks">
-          {(fields, { add, remove }) => (
-            <>
-              {fields.map(field => (
-                <div key={field.key}>
-                  <Form.Item
-                    {...field}
-                    {...webhookFormItemLayout}
-                    name={[field?.name, 'url']}
-                    fieldKey={[field?.fieldKey, 'url']}
-                    validateTrigger={['onBlur']}
-                    rules={[{
-                      required: true,
-                      type: 'url',
-                      whitespace: true,
-                      message: 'Please input DingTalk webhook url.',
-                    }]}
-                  >
-                    <Input
-                      addonBefore={
-                        <Form.Item
-                          name={[field?.name, 'tag']}
-                          initialValue="build"
-                          noStyle
-                        >
-                          <Select style={{ width: 88 }}>
-                            <Option value="build"><FormattedMessage id="setting.notification.build" /></Option>
-                          </Select>
-                        </Form.Item>
-                      }
-                      placeholder="webhook"
-                      addonAfter={
-                        <DeleteOutlined
-                          style={{
-                            cursor: 'pointer',
-                          }}
-                          onClick={() => remove(field?.name)}
+          {(fields, { add, remove }) => {
+            return (
+              <>
+                {fields.map(field => {
+                  return (
+                    <div key={field.key}>
+                      <Form.Item
+                        {...field}
+                        {...webhookFormItemLayout}
+                        name={[field?.name, 'url']}
+                        fieldKey={[field?.fieldKey, 'url']}
+                        validateTrigger={['onBlur']}
+                        rules={[{
+                          required: true,
+                          type: 'url',
+                          whitespace: true,
+                          message: 'Please input DingTalk webhook url.',
+                        }]}
+                      >
+                        <Input
+                          addonBefore={(
+                            <Form.Item
+                              name={[field?.name, 'tag']}
+                              initialValue="build"
+                              noStyle
+                            >
+                              <Select style={{ width: 88 }}>
+                                <Option value="build"><FormattedMessage id="setting.notification.build" /></Option>
+                              </Select>
+                            </Form.Item>
+                      )}
+                          placeholder="webhook"
+                          addonAfter={(
+                            <DeleteOutlined
+                              style={{
+                                cursor: 'pointer',
+                              }}
+                              onClick={() => { return remove(field?.name); }}
+                            />
+                      )}
                         />
-                      }
-                    />
-                  </Form.Item>
-                </div>
-              ))}
+                      </Form.Item>
+                    </div>
+                  );
+                })}
 
-              <Form.Item
-                {...webhookFormItemLayout}
-              >
-                <Button
-                  type="dashed"
-                  data-accessibilityid="add-notification"
-                  onClick={() => add()}
-                  block
-                  icon={<PlusOutlined />}
+                <Form.Item
+                  {...webhookFormItemLayout}
                 >
-                  <FormattedMessage id='setting.addDingMessage' />
-                </Button>
-              </Form.Item>
-            </>
-          )}
+                  <Button
+                    type="dashed"
+                    data-accessibilityid="add-notification"
+                    onClick={() => { return add(); }}
+                    block
+                    icon={<PlusOutlined />}
+                  >
+                    <FormattedMessage id="setting.addDingMessage" />
+                  </Button>
+                </Form.Item>
+              </>
+            );
+          }}
         </Form.List>
         <Form.Item {...buttonFormItemLayout}>
           <Button
@@ -152,12 +154,12 @@ const DingdingSetting = () => {
             type="primary"
             style={{ width: '100%' }}
           >
-            <FormattedMessage id='setting.submit' />
+            <FormattedMessage id="setting.submit" />
           </Button>
         </Form.Item>
       </Form>
     </Spin>
   );
-};
+}
 
 export default DingdingSetting;

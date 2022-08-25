@@ -1,11 +1,9 @@
-'use strict';
-
 import 'whatwg-fetch';
 
 import { getServer } from './getServer';
 
 const verbs = {
-  GET (url) {
+  GET(url) {
     return fetch(url, {
       credentials: 'same-origin',
       headers: {
@@ -15,7 +13,7 @@ const verbs = {
     });
   },
 
-  POST (url, params) {
+  POST(url, params) {
     return fetch(url, {
       method: 'POST',
       credentials: 'same-origin',
@@ -27,7 +25,7 @@ const verbs = {
     });
   },
 
-  DELETE (url) {
+  DELETE(url) {
     return fetch(url, {
       method: 'DELETE',
       credentials: 'same-origin',
@@ -38,7 +36,7 @@ const verbs = {
     });
   },
 
-  PUT (url, params) {
+  PUT(url, params) {
     return fetch(url, {
       method: 'PUT',
       credentials: 'same-origin',

@@ -1,12 +1,10 @@
-'use strict';
-
 import React from 'react';
 import { Layout } from 'antd';
 
 import Header from './Header';
 import SiderBar from './SiderBar';
 
-const Content = Layout.Content;
+const { Content } = Layout;
 
 export default class ReliableLayout extends React.Component {
   state = {
@@ -20,7 +18,7 @@ export default class ReliableLayout extends React.Component {
     });
   };
 
-  render () {
+  render() {
     return (
       <Layout
         style={{ minHeight: '100%' }}
@@ -39,4 +37,3 @@ export default class ReliableLayout extends React.Component {
     );
   }
 }
-

@@ -1,5 +1,3 @@
-'use strict';
-
 import React from 'react';
 import { List } from 'antd';
 
@@ -8,17 +6,19 @@ export default class DepTable extends React.Component {
     loading: false,
   };
 
-  render () {
+  render() {
     return (
       <List
         size="small"
         bordered
         dataSource={this.props.data}
-        renderItem={item => (
-          <List.Item>
-            <a href={item.fileAddress} target="_blank">{item.fileName}</a>
-          </List.Item>
-        )}
+        renderItem={item => {
+          return (
+            <List.Item>
+              <a href={item.fileAddress} target="_blank">{item.fileName}</a>
+            </List.Item>
+          );
+        }}
       />
     );
   }

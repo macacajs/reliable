@@ -1,5 +1,3 @@
-'use strict';
-
 import React from 'react';
 import { Breadcrumb } from 'antd';
 import { Link } from 'react-router-dom';
@@ -43,20 +41,20 @@ export default class Builds extends React.Component {
     });
   }
 
-  componentDidMount () {
+  componentDidMount() {
     this.fetchOneBuild();
   }
 
-  render () {
+  render() {
     const { buildNumber, jobName } = queryParse(location.search);
     return (
       <ReliableLayout>
         <Breadcrumb style={{ marginBottom: '10px' }}>
           <Breadcrumb.Item>
-            <Link to="/"><FormattedMessage id='sidebar.homepage' /></Link>
+            <Link to="/"><FormattedMessage id="sidebar.homepage" /></Link>
           </Breadcrumb.Item>
           <Breadcrumb.Item>
-            <Link to="/"><FormattedMessage id='sidebar.allbuilds' /></Link>
+            <Link to="/"><FormattedMessage id="sidebar.allbuilds" /></Link>
           </Breadcrumb.Item>
           <Breadcrumb.Item>
             <Link to={{ pathname: '/', search: `jobName=${jobName}` }}>{jobName}</Link>

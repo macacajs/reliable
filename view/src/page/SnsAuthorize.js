@@ -13,13 +13,15 @@ export default class Builds extends React.Component {
   handleScriptError = () => {
     console.log('handleScriptError');
   }
+
   handleScriptLoad = () => {
     this.addHandler();
     this.initAuth();
   }
+
   addHandler = () => {
     const hanndleMessage = event => {
-      const origin = event.origin;
+      const { origin } = event;
       if (origin === 'https://login.dingtalk.com') {
         const loginTmpCode = event.data;
         this.redirectToCallbackUrl(loginTmpCode);
@@ -32,6 +34,7 @@ export default class Builds extends React.Component {
       window.attachEvent('onmessage', hanndleMessage);
     }
   }
+
   redirectToCallbackUrl = loginTmpCode => {
     const query = queryString.stringify({
       appid,
@@ -43,6 +46,7 @@ export default class Builds extends React.Component {
     });
     location.href = `https://oapi.dingtalk.com/connect/oauth2/sns_authorize?${query}`;
   }
+
   initAuth = () => {
     const query = queryString.stringify({
       appid,
@@ -60,9 +64,10 @@ export default class Builds extends React.Component {
       height: '400',
     });
   }
-  render () {
+
+  render() {
     return (
-      <ReliableLayout hideMenu={true}>
+      <ReliableLayout hideMenu>
         <Script
           url="//g.alicdn.com/dingding/dinglogin/0.0.5/ddLogin.js"
           onError={this.handleScriptError}
@@ -72,11 +77,12 @@ export default class Builds extends React.Component {
           width: '365px',
           margin: 'auto',
           textAlign: 'center',
-        }}>
-          <div style={{fontSize: '1rem'}}>Sign in with Dingtalk
-            <DingdingOutlined style={{fontSize: '1.5rem'}}/>
+        }}
+        >
+          <div style={{ fontSize: '1rem' }}>Sign in with Dingtalk
+            <DingdingOutlined style={{ fontSize: '1.5rem' }} />
           </div>
-          <div id="login_container"/>
+          <div id="login_container" />
         </div>
       </ReliableLayout>
     );

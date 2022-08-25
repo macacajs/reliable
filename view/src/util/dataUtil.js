@@ -1,5 +1,3 @@
-'use strict';
-
 export const strUtil = {
   cutStrTail(length, str) {
     if (typeof str === 'string' && str.length > 0) {

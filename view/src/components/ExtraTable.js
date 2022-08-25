@@ -1,5 +1,3 @@
-'use strict';
-
 import React from 'react';
 import { Table } from 'antd';
 import { FormattedMessage } from 'react-intl';
@@ -7,14 +5,14 @@ import { FormattedMessage } from 'react-intl';
 import { getUuid } from '../util/index';
 
 const columns = [{
-  title: <FormattedMessage id='buildinfo.extra.extraName' />,
+  title: <FormattedMessage id="buildinfo.extra.extraName" />,
   dataIndex: 'extraName',
   width: 200,
-  render: value => <span className="itemName">{value}</span>,
+  render: value => { return <span className="itemName">{value}</span>; },
 }, {
-  title: <FormattedMessage id='buildinfo.extra.extraContent' />,
+  title: <FormattedMessage id="buildinfo.extra.extraContent" />,
   dataIndex: 'extraContent',
-  render: value => <pre>{JSON.stringify(value, null, 2)}</pre>,
+  render: value => { return <pre>{JSON.stringify(value, null, 2)}</pre>; },
 }];
 
 export default class ExtraTable extends React.Component {
@@ -22,10 +20,11 @@ export default class ExtraTable extends React.Component {
     loading: false,
   };
 
-  render () {
+  render() {
     return (
-      <Table columns={columns}
-        rowKey={record => getUuid()}
+      <Table
+        columns={columns}
+        rowKey={record => { return getUuid(); }}
         dataSource={this.props.data}
         loading={this.state.loading}
         onChange={this.handleTableChange}

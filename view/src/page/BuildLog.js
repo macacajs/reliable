@@ -1,5 +1,3 @@
-'use strict';
-
 import React from 'react';
 import {
   Breadcrumb,
@@ -11,17 +9,17 @@ import { queryParse } from '../util/index';
 import ReliableLayout from '../components/ReliableLayout';
 
 export default class BuildLog extends React.Component {
-  render () {
+  render() {
     const { buildNumber, jobName } = queryParse(location.search);
 
     return (
       <ReliableLayout>
         <Breadcrumb style={{ marginBottom: '10px' }}>
           <Breadcrumb.Item>
-            <Link to="/"><FormattedMessage id='sidebar.homepage' /></Link>
+            <Link to="/"><FormattedMessage id="sidebar.homepage" /></Link>
           </Breadcrumb.Item>
           <Breadcrumb.Item>
-            <Link to="/"><FormattedMessage id='sidebar.allbuilds' /></Link>
+            <Link to="/"><FormattedMessage id="sidebar.allbuilds" /></Link>
           </Breadcrumb.Item>
           <Breadcrumb.Item>{`${jobName} / ${buildNumber}`}</Breadcrumb.Item>
         </Breadcrumb>
@@ -29,4 +27,3 @@ export default class BuildLog extends React.Component {
     );
   }
 }
-

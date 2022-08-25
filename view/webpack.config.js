@@ -65,7 +65,7 @@ module.exports = {
             loader: 'svgo-loader',
           },
         ],
-        include: [path.resolve(__dirname, 'src', 'assets')],
+        include: [ path.resolve(__dirname, 'src', 'assets') ],
       },
     ],
   },

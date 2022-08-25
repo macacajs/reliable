@@ -1,5 +1,3 @@
-'use strict';
-
 import React from 'react';
 import moment from 'moment';
 import safeGet from 'lodash.get';
@@ -11,11 +9,11 @@ import TestTable from './TestTable';
 import ExtraTable from './ExtraTable';
 import FileTable from './FileTable';
 
-const TabPane = Tabs.TabPane;
+const { TabPane } = Tabs;
 
 export default class OneBuildTabs extends React.Component {
-  getExtraInfo () {
-    const data = this.props.data;
+  getExtraInfo() {
+    const { data } = this.props;
     const result = [];
     if (data && data.extraInfo) {
       Object.keys(data.extraInfo).forEach(item => {
@@ -28,8 +26,8 @@ export default class OneBuildTabs extends React.Component {
     return result;
   }
 
-  getPkgInfo () {
-    const data = this.props.data;
+  getPkgInfo() {
+    const { data } = this.props;
     const result = {
       packages: [],
       platform: safeGet(data, 'environment.platform'),
@@ -49,8 +47,8 @@ export default class OneBuildTabs extends React.Component {
     return result;
   }
 
-  getTestInfo () {
-    const data = this.props.data;
+  getTestInfo() {
+    const { data } = this.props;
     const result = [];
     if (data && data.testInfo) {
       const report = data.testInfo.testHtmlReporterPath;
@@ -72,8 +70,8 @@ export default class OneBuildTabs extends React.Component {
     return result;
   }
 
-  getFileInfo () {
-    const data = this.props.data;
+  getFileInfo() {
+    const { data } = this.props;
     const result = [];
     if (data && data.files && data.files.length) {
       data.files.forEach(item => {
@@ -86,11 +84,11 @@ export default class OneBuildTabs extends React.Component {
     return result;
   }
 
-  onTabChange (type) {
+  onTabChange(type) {
     location.hash = `type=${type}`;
   }
 
-  render () {
+  render() {
     if (this.props.loading) {
       return <Spin />;
     }
@@ -105,20 +103,20 @@ export default class OneBuildTabs extends React.Component {
           style={{ height: 'auto' }}
           onChange={this.onTabChange}
         >
-          <TabPane tab={<FormattedMessage id='buildinfo.pkgTab' />} key="pkginfo">
+          <TabPane tab={<FormattedMessage id="buildinfo.pkgTab" />} key="pkginfo">
             <PkgTable
               fetchOneBuild={this.props.fetchOneBuild}
               data={getPkgInfo.packages}
               platform={getPkgInfo.platform}
             />
           </TabPane>
-          <TabPane tab={<FormattedMessage id='buildinfo.testTab' />} key="test">
+          <TabPane tab={<FormattedMessage id="buildinfo.testTab" />} key="test">
             <TestTable data={this.getTestInfo()} />
           </TabPane>
-          <TabPane tab={<FormattedMessage id='buildinfo.extraTab' />} key="extrainfo">
+          <TabPane tab={<FormattedMessage id="buildinfo.extraTab" />} key="extrainfo">
             <ExtraTable data={this.getExtraInfo()} />
           </TabPane>
-          <TabPane tab={<FormattedMessage id='buildinfo.filesTab' />} key="fileinfo">
+          <TabPane tab={<FormattedMessage id="buildinfo.filesTab" />} key="fileinfo">
             <FileTable data={this.getFileInfo()} />
           </TabPane>
         </Tabs>
@@ -126,4 +124,3 @@ export default class OneBuildTabs extends React.Component {
     );
   }
 }
-

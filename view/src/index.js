@@ -1,15 +1,13 @@
-'use strict';
-
 import React from 'react';
 import ReactGA from 'react-ga';
 import ReactDOM from 'react-dom';
 import { Route, BrowserRouter } from 'react-router-dom';
 import { addLocaleData, IntlProvider } from 'react-intl';
 
-import zhCN from './i18n/zh_CN';
-import enUS from './i18n/en_US';
 import zh from 'react-intl/locale-data/zh';
 import en from 'react-intl/locale-data/en';
+import zhCN from './i18n/zh_CN';
+import enUS from './i18n/en_US';
 
 import Builds from './page/Builds';
 import Setting from './page/Setting';
@@ -63,12 +61,12 @@ ReactDOM.render(
   >
     <BrowserRouter>
       <div>
-        <Route exact path="/" component={ Builds } />
-        <Route exact path="/setting" component={ Setting } />
-        <Route exact path="/buildinfo" component={ OneBuild } />
-        <Route exact path="/buildlog" component={ BuildLog } />
-        <Route exact path="/insight" component={ Insight } />
-        <Route exact path="/snsAuthorize/auth" component={ SnsAuthorize } />
+        <Route exact path="/" component={Builds} />
+        <Route exact path="/setting" component={Setting} />
+        <Route exact path="/buildinfo" component={OneBuild} />
+        <Route exact path="/buildlog" component={BuildLog} />
+        <Route exact path="/insight" component={Insight} />
+        <Route exact path="/snsAuthorize/auth" component={SnsAuthorize} />
       </div>
     </BrowserRouter>
   </IntlProvider>,

@@ -1,5 +1,3 @@
-'use strict';
-
 import React from 'react';
 import moment from 'moment';
 import { Link } from 'react-router-dom';
@@ -26,107 +24,128 @@ export default class BuildsTable extends React.Component {
     pager.current = pagination.current;
     this.props.updatePagination(pager, this.props.jobName);
   }
+
   columns = [{
-    title: <FormattedMessage id='builds.jobName' />,
+    title: <FormattedMessage id="builds.jobName" />,
     dataIndex: 'jobName',
-    render: (text, record) =>
-      <span>
-        {text}
-      </span>,
+    render: (text, record) => {
+      return (
+        <span>
+          {text}
+        </span>
+      );
+    },
   }, {
-    title: <FormattedMessage id='builds.buildLog' />,
+    title: <FormattedMessage id="builds.buildLog" />,
     width: 100,
-    render: (text, record) =>
-      record.buildLogUrl
-        ? <a
-          href={record.buildLogUrl}
-          target="_blank"
-        >
-          <FormattedMessage id='builds.buildLog' />
-        </a>
-        : <Link to={{ pathname: '/buildlog', search: `?jobName=${record.jobName}&buildNumber=${record.buildNumber}` }}>
-          <FormattedMessage id='builds.buildLog' />
-        </Link>,
+    render: (text, record) => {
+      return (record.buildLogUrl
+        ? (
+          <a
+            href={record.buildLogUrl}
+            target="_blank"
+          >
+            <FormattedMessage id="builds.buildLog" />
+          </a>
+        )
+        : (
+          <Link to={{ pathname: '/buildlog', search: `?jobName=${record.jobName}&buildNumber=${record.buildNumber}` }}>
+            <FormattedMessage id="builds.buildLog" />
+          </Link>
+        ));
+    },
   }, {
-    title: <FormattedMessage id='builds.buildNumber' />,
+    title: <FormattedMessage id="builds.buildNumber" />,
     dataIndex: 'buildNumber',
     width: 200,
-    render: (value, record) => (
-      <span>
-        <a
-          href={record.configureUrl}
-          target="_blank"
-        >
-          <SettingOutlined />
-        </a>
-        <a
-          style={{
-            marginLeft: 10,
-          }}
-          href={record.buildUrl}
-          target="_blank"
-        >
-          {strUtil.cutStrTail(15, value)}
-        </a>
-      </span>
-    ),
+    render: (value, record) => {
+      return (
+        <span>
+          <a
+            href={record.configureUrl}
+            target="_blank"
+          >
+            <SettingOutlined />
+          </a>
+          <a
+            style={{
+              marginLeft: 10,
+            }}
+            href={record.buildUrl}
+            target="_blank"
+          >
+            {strUtil.cutStrTail(15, value)}
+          </a>
+        </span>
+      );
+    },
   }, {
-    title: <FormattedMessage id='builds.platform' />,
+    title: <FormattedMessage id="builds.platform" />,
     dataIndex: 'platform',
   }, {
-    title: <FormattedMessage id='builds.buildEndTime' />,
+    title: <FormattedMessage id="builds.buildEndTime" />,
     dataIndex: 'buildEndTime',
-    render: (text, record) => (
-      <span>
-        {moment(text).format('YYYY-MM-DD HH:mm:ss')}
-      </span>
-    ),
+    render: (text, record) => {
+      return (
+        <span>
+          {moment(text).format('YYYY-MM-DD HH:mm:ss')}
+        </span>
+      );
+    },
   }, {
-    title: <FormattedMessage id='buildinfo.pkg.gitBranch' />,
+    title: <FormattedMessage id="buildinfo.pkg.gitBranch" />,
     dataIndex: 'gitBranch',
     width: 240,
-    render: (text, record) =>
-      <span>
-        {record.gitCommitInfo.gitBranch}
-      </span>,
+    render: (text, record) => {
+      return (
+        <span>
+          {record.gitCommitInfo.gitBranch}
+        </span>
+      );
+    },
   }, {
-    title: <FormattedMessage id='buildinfo.pkg.committer' />,
+    title: <FormattedMessage id="buildinfo.pkg.committer" />,
     dataIndex: 'committer',
     width: 120,
-    render: (text, record) =>
-      <span>
-        {record.gitCommitInfo.author?.name}
-      </span>,
+    render: (text, record) => {
+      return (
+        <span>
+          {record.gitCommitInfo.author?.name}
+        </span>
+      );
+    },
   }, {
-    title: <FormattedMessage id='builds.detailInfo' />,
+    title: <FormattedMessage id="builds.detailInfo" />,
     align: 'center',
     width: 80,
     render: (value, record) => {
       if (record.state === 'INIT') return;
       return (
         record.buildNumber
-          ? <Link
-            to={{
-              pathname: '/buildinfo',
-              search: `?jobName=${record.jobName}&buildNumber=${record.buildNumber}`,
-            }}
-          >
-            <RightCircleOutlined />
-          </Link>
+          ? (
+            <Link
+              to={{
+                pathname: '/buildinfo',
+                search: `?jobName=${record.jobName}&buildNumber=${record.buildNumber}`,
+              }}
+            >
+              <RightCircleOutlined />
+            </Link>
+          )
           : ''
       );
     },
   },
   ];
 
-  render () {
+  render() {
     return (
       <div>
         <Table
           className="builds-table"
           columns={this.columns}
-          rowKey={record => record.buildNumber + getUuid()}
-          rowClassName={record => mapBuildDataToColor(record)}
+          rowKey={record => { return record.buildNumber + getUuid(); }}
+          rowClassName={record => { return mapBuildDataToColor(record); }}
           dataSource={this.props.data}
           loading={this.props.loading}
           pagination={this.props.pagination}

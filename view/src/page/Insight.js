@@ -1,5 +1,3 @@
-'use strict';
-
 import {
   Row,
   Col,
@@ -29,7 +27,7 @@ import {
 } from '../util/index';
 import ReliableLayout from '../components/ReliableLayout';
 
-const RangePicker = DatePicker.RangePicker;
+const { RangePicker } = DatePicker;
 
 const topColResponsiveProps = {
   xs: 24,
@@ -51,11 +49,11 @@ export default class Builds extends React.Component {
     loading4: true,
   };
 
-  componentDidMount () {
+  componentDidMount() {
     this.fetch();
   }
 
-  fetch = async ([ startDate, endDate ] = []) => {
+  fetch = async ([startDate, endDate] = []) => {
     this.setState({
       loading: true,
     });
@@ -104,23 +102,25 @@ export default class Builds extends React.Component {
     await this.fetch(dateString);
   }
 
-
   getColumns = () => {
     return [{
-      title: <FormattedMessage id='builds.rank' />,
+      title: <FormattedMessage id="builds.rank" />,
       key: 'rank',
-      render: (text, record, index) => <span>{++index}</span>,
+      render: (text, record, index) => { return <span>{++index}</span>; },
       align: 'center',
       width: 80,
     }, {
-      title: <FormattedMessage id='builds.jobName' />,
+      title: <FormattedMessage id="builds.jobName" />,
       dataIndex: 'jobName',
-      render: (text, record) =>
-        <Link to={{pathname: '/', search: `?jobName=${record.jobName}`}}>
-          {text}
-        </Link>,
+      render: (text, record) => {
+        return (
+          <Link to={{ pathname: '/', search: `?jobName=${record.jobName}` }}>
+            {text}
+          </Link>
+        );
+      },
     }, {
-      title: <FormattedMessage id='insight.test.lineCoverage.latest' />,
+      title: <FormattedMessage id="insight.test.lineCoverage.latest" />,
       dataIndex: 'linePercentList[0].linePercent',
       key: 'latestLinePercent',
       render: (text, record) => {
@@ -129,121 +129,135 @@ export default class Builds extends React.Component {
         if (!pct) {
           return '-';
         }
-        return <a target="_blank" href={coverageUrl}>
-          {pct}%
-        </a>;
+        return (
+          <a target="_blank" href={coverageUrl}>
+            {pct}%
+          </a>
+        );
       },
     }, {
-      title: <span>
-        <FormattedMessage id='insight.test.lineCoverage' />
-        <Popover content={<FormattedMessage id='insight.test.lineCoverage.tip' />}>
-          <QuestionCircleOutlined style={{marginLeft: '2px'}} />
-        </Popover>
-      </span>,
+      title: (
+        <span>
+          <FormattedMessage id="insight.test.lineCoverage" />
+          <Popover content={<FormattedMessage id="insight.test.lineCoverage.tip" />}>
+            <QuestionCircleOutlined style={{ marginLeft: '2px' }} />
+          </Popover>
+        </span>
+      ),
       dataIndex: 'linePercent',
       render: (text, record) => {
         return record.linePercent
-          ? <Popover
-            placement="right"
-            title={<FormattedMessage id='insight.test.lineCoverage.history' />}
-            content={
-              <Table
-                size="small"
-                dataSource={record.linePercentList}
-                columns={[
-                  {
-                    title: 'Commit',
-                    dataIndex: 'commitUrl',
-                    key: 'commitUrl',
-                    render: (text, record) => {
-                      return <a target="_blank" href={text}>{record.shortHash}</a>;
+          ? (
+            <Popover
+              placement="right"
+              title={<FormattedMessage id="insight.test.lineCoverage.history" />}
+              content={(
+                <Table
+                  size="small"
+                  dataSource={record.linePercentList}
+                  columns={[
+                    {
+                      title: 'Commit',
+                      dataIndex: 'commitUrl',
+                      key: 'commitUrl',
+                      render: (text, record) => {
+                        return <a target="_blank" href={text}>{record.shortHash}</a>;
+                      },
                     },
-                  },
-                  {
-                    title: 'Coverage',
-                    dataIndex: 'coverageUrl',
-                    key: 'commitUrl',
-                    align: 'center',
-                    render: (text, record) => {
-                      return record.linePercent
-                        ? <a target="_blank" href={text}>{record.linePercent}%</a>
-                        : '-';
+                    {
+                      title: 'Coverage',
+                      dataIndex: 'coverageUrl',
+                      key: 'commitUrl',
+                      align: 'center',
+                      render: (text, record) => {
+                        return record.linePercent
+                          ? <a target="_blank" href={text}>{record.linePercent}%</a>
+                          : '-';
+                      },
                     },
-                  },
-                  {
-                    title: 'CreatedAt',
-                    dataIndex: 'createdAt',
-                    key: 'createdAt',
-                    align: 'right',
-                  },
-                ]}
-              />
-            }
-          >
-            <a>{record.linePercent}%</a>
-          </Popover>
+                    {
+                      title: 'CreatedAt',
+                      dataIndex: 'createdAt',
+                      key: 'createdAt',
+                      align: 'right',
+                    },
+                  ]}
+                />
+            )}
+            >
+              <a>{record.linePercent}%</a>
+            </Popover>
+          )
           : '-';
       },
     }, {
-      title: <span>
-        <FormattedMessage id='insight.test.passPercent' />
-        <Popover content={<FormattedMessage id='insight.test.passPercent.tip' />}>
-          <QuestionCircleOutlined style={{marginLeft: '2px'}} />
-        </Popover>
-      </span>,
+      title: (
+        <span>
+          <FormattedMessage id="insight.test.passPercent" />
+          <Popover content={<FormattedMessage id="insight.test.passPercent.tip" />}>
+            <QuestionCircleOutlined style={{ marginLeft: '2px' }} />
+          </Popover>
+        </span>
+      ),
       dataIndex: 'passPercent',
       render: (text, record) => {
         return record.passPercent
-          ? <Popover
-            placement="right"
-            title={<FormattedMessage id='insight.test.passPercent.history' />}
-            content={
-              <Table
-                size="small"
-                dataSource={record.passPercentList}
-                columns={[
-                  {
-                    title: 'Commit',
-                    dataIndex: 'commitUrl',
-                    key: 'commitUrl',
-                    render: (text, record) => {
-                      return <a target="_blank" href={text}>{record.shortHash}</a>;
+          ? (
+            <Popover
+              placement="right"
+              title={<FormattedMessage id="insight.test.passPercent.history" />}
+              content={(
+                <Table
+                  size="small"
+                  dataSource={record.passPercentList}
+                  columns={[
+                    {
+                      title: 'Commit',
+                      dataIndex: 'commitUrl',
+                      key: 'commitUrl',
+                      render: (text, record) => {
+                        return <a target="_blank" href={text}>{record.shortHash}</a>;
+                      },
                     },
-                  },
-                  {
-                    title: 'Pass Percentage',
-                    dataIndex: 'reporterUrl',
-                    key: 'reporterUrl',
-                    align: 'right',
-                    render: (text, record) => {
-                      return record.passPercent
-                        ? <a target="_blank" href={text}>{record.passPercent}%</a>
-                        : '-';
+                    {
+                      title: 'Pass Percentage',
+                      dataIndex: 'reporterUrl',
+                      key: 'reporterUrl',
+                      align: 'right',
+                      render: (text, record) => {
+                        return record.passPercent
+                          ? <a target="_blank" href={text}>{record.passPercent}%</a>
+                          : '-';
+                      },
                     },
-                  },
-                  {
-                    title: 'CreatedAt',
-                    dataIndex: 'createdAt',
-                    key: 'createdAt',
-                    align: 'right',
-                  },
-                ]}
-              />
-            }
-          >
-            <a>{record.passPercent}%</a>
-          </Popover>
+                    {
+                      title: 'CreatedAt',
+                      dataIndex: 'createdAt',
+                      key: 'createdAt',
+                      align: 'right',
+                    },
+                  ]}
+                />
+            )}
+            >
+              <a>{record.passPercent}%</a>
+            </Popover>
+          )
           : '-';
       },
     }, {
-      title: <FormattedMessage id='insight.committer' />,
+      title: <FormattedMessage id="insight.committer" />,
       dataIndex: 'committer',
-      render: (text, record) =>
-        <a
-          target="_blank"
-          href={record.lastCommit.commitUrl}
-          style={{marginLeft: '4px'}}
-        >{ record.lastCommit.committer.name }</a>,
+      render: (text, record) => {
+        return (
+          <a
+            target="_blank"
+            href={record.lastCommit.commitUrl}
+            style={{ marginLeft: '4px' }}
+          >{ record.lastCommit.committer.name }
+          </a>
+        );
+      },
     }];
   }
 
@@ -255,7 +269,7 @@ export default class Builds extends React.Component {
     return data;
   }
 
-  getTopCard () {
+  getTopCard() {
     const list = this.getData();
     if (!list.length) {
       return (
@@ -269,7 +283,7 @@ export default class Builds extends React.Component {
       <div className="topcard">
         <div className="up">
           <CaretUpOutlined />
-          <Link to={{pathname: '/', search: `?jobName=${first.jobName}`}}>
+          <Link to={{ pathname: '/', search: `?jobName=${first.jobName}` }}>
             {first.jobName}
           </Link>
           <span className="committer">
@@ -278,7 +292,7 @@ export default class Builds extends React.Component {
         </div>
         <div className="down">
           <CaretDownOutlined />
-          <Link to={{pathname: '/', search: `?jobName=${last.jobName}`}}>
+          <Link to={{ pathname: '/', search: `?jobName=${last.jobName}` }}>
             {last.jobName}
           </Link>
           <span className="committer">
@@ -289,61 +303,64 @@ export default class Builds extends React.Component {
     );
   }
 
-  render () {
+  render() {
     return (
       <ReliableLayout>
         <Breadcrumb style={{
           marginBottom: '10px',
-        }}>
+        }}
+        >
           <Breadcrumb.Item>
-            <Link to="/"><FormattedMessage id='sidebar.homepage' /></Link>
+            <Link to="/"><FormattedMessage id="sidebar.homepage" /></Link>
           </Breadcrumb.Item>
           <Breadcrumb.Item>
-            <Link to="/insight"><FormattedMessage id='sidebar.insight' /></Link>
+            <Link to="/insight"><FormattedMessage id="sidebar.insight" /></Link>
           </Breadcrumb.Item>
         </Breadcrumb>
         <Row gutter={24}>
           <Col {...topColResponsiveProps}>
             <ChartCard
-              title={<FormattedMessage id='insight.builds.number' />}
+              title={<FormattedMessage id="insight.builds.number" />}
               loading={this.state.loading1}
               content={this.state.data.length}
             />
           </Col>
           <Col {...topColResponsiveProps}>
             <ChartCard
-              title={<FormattedMessage id='insight.builds.trend' />}
+              title={<FormattedMessage id="insight.builds.trend" />}
               loading={this.state.loading2}
               content={this.state.total}
             />
           </Col>
           <Col {...topColResponsiveProps}>
             <ChartCard
-              title={<FormattedMessage id='insight.builds.top' />}
+              title={<FormattedMessage id="insight.builds.top" />}
               loading={this.state.loading3}
               content={this.getTopCard()}
             />
           </Col>
         </Row>
         <Spin spinning={this.state.loading4}>
-          <Row style={{marginBottom: '10px'}}>
+          <Row style={{ marginBottom: '10px' }}>
             <Col span={6} offset={18}>
               <RangePicker
                 style={{ width: '100%' }}
-                renderExtraFooter={() =>
-                  <span>
-                    <BulbOutlined />
-                    <FormattedMessage id='insight.dateRange.tip' />
-                  </span>
-                }
+                renderExtraFooter={() => {
+                  return (
+                    <span>
+                      <BulbOutlined />
+                      <FormattedMessage id="insight.dateRange.tip" />
+                    </span>
+                  );
+                }}
                 onChange={this.changeDateRange}
               />
             </Col>
           </Row>
           <Table
             size="middle"
-            rowKey={record => record.jobName}
-            rowClassName={record => mapNumberToColor(record.linePercent)}
+            rowKey={record => { return record.jobName; }}
+            rowClassName={record => { return mapNumberToColor(record.linePercent); }}
             dataSource={this.getData()}
             columns={this.getColumns()}
             pagination={false}

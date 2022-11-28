@@ -14,10 +14,10 @@ export default class Builds extends React.Component {
       <ReliableLayout>
         <Breadcrumb style={{ marginBottom: '10px' }}>
           <Breadcrumb.Item>
-            <Link to="/"><FormattedMessage id="sidebar.homepage" /></Link>
+            <Link to="/">{__i18n('主页')}</Link>
           </Breadcrumb.Item>
           <Breadcrumb.Item>
-            <Link to="/"><FormattedMessage id="sidebar.allbuilds" /></Link>
+            <Link to="/">{__i18n('所有构建')}</Link>
           </Breadcrumb.Item>
           <Breadcrumb.Item>
             { jobName ? <Link to={{ pathname: '/', search: `jobName=${jobName}` }}>{jobName}</Link> : '' }

@@ -46,7 +46,7 @@ export default class SiderBar extends React.Component {
             <Link to="/">
               <FlagOutlined />
               <span>
-                <FormattedMessage id="sidebar.buildinfo" />
+                {__i18n('构建信息')}
               </span>
             </Link>
           </Menu.Item>
@@ -54,7 +54,7 @@ export default class SiderBar extends React.Component {
             <Link to="/insight">
               <span>
                 <LineChartOutlined />
-                <FormattedMessage id="sidebar.insight" />
+                {__i18n('洞察')}
               </span>
             </Link>
           </Menu.Item>
@@ -63,7 +63,7 @@ export default class SiderBar extends React.Component {
               <Link to="/setting">
                 <SettingOutlined />
                 <span>
-                  <FormattedMessage id="sidebar.setting" />
+                  {__i18n('设置')}
                 </span>
               </Link>
             </Menu.Item>

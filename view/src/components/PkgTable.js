@@ -32,16 +32,16 @@ export default class PkgTable extends React.Component {
 
   getColumns = () => {
     let columns = [{
-      title: <FormattedMessage id="buildinfo.pkg.version" />,
+      title: __i18n('版本号'),
       dataIndex: 'version',
       width: 100,
     }, {
-      title: <FormattedMessage id="buildinfo.pkg.type" />,
+      title: __i18n('类型'),
       dataIndex: 'type',
       width: 160,
     }];
     columns = columns.concat([{
-      title: <FormattedMessage id="buildinfo.pkg.download" />,
+      title: __i18n('下载'),
       dataIndex: 'download',
       width: 160,
       render: (value, record) => {
@@ -52,14 +52,14 @@ export default class PkgTable extends React.Component {
               onClick={this.showQrCodeModal.bind(this, record)}
             />
             <a href={value} style={{ marginLeft: '8px' }} target="_blank">
-              <FormattedMessage id="buildinfo.pkg.download" />
+              {__i18n('下载')}
             </a>
           </span>
         );
       },
     }]);
     columns = columns.concat([{
-      title: <FormattedMessage id="buildinfo.pkg.gitBranch" />,
+      title: __i18n('代码分支'),
       dataIndex: 'gitBranch',
       width: 300,
       render: (value, record) => {
@@ -68,7 +68,7 @@ export default class PkgTable extends React.Component {
         );
       },
     }, {
-      title: <FormattedMessage id="buildinfo.pkg.gitInfo" />,
+      title: __i18n('提交信息'),
       width: 240,
       dataIndex: 'gitCommit',
       render: (value, record) => {

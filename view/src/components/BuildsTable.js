@@ -25,7 +25,7 @@ export default class BuildsTable extends React.Component {
   }
 
   columns = [{
-    title: <FormattedMessage id="builds.jobName" />,
+    title: __i18n('项目名'),
     dataIndex: 'jobName',
     render: (text, record) => {
       return (
@@ -35,7 +35,7 @@ export default class BuildsTable extends React.Component {
       );
     },
   }, {
-    title: <FormattedMessage id="builds.buildLog" />,
+    title: __i18n('运行日志'),
     width: 100,
     render: (text, record) => {
       return (record.buildLogUrl
@@ -44,17 +44,17 @@ export default class BuildsTable extends React.Component {
             href={record.buildLogUrl}
             target="_blank"
           >
-            <FormattedMessage id="builds.buildLog" />
+            {__i18n('运行日志')}
           </a>
         )
         : (
           <Link to={{ pathname: '/buildlog', search: `?jobName=${record.jobName}&buildNumber=${record.buildNumber}` }}>
-            <FormattedMessage id="builds.buildLog" />
+            {__i18n('运行日志')}
           </Link>
         ));
     },
   }, {
-    title: <FormattedMessage id="builds.buildNumber" />,
+    title: __i18n('构建号'),
     dataIndex: 'buildNumber',
     width: 200,
     render: (value, record) => {
@@ -79,10 +79,10 @@ export default class BuildsTable extends React.Component {
       );
     },
   }, {
-    title: <FormattedMessage id="builds.platform" />,
+    title: __i18n('平台'),
     dataIndex: 'platform',
   }, {
-    title: <FormattedMessage id="builds.buildEndTime" />,
+    title: __i18n('完成时间'),
     dataIndex: 'buildEndTime',
     render: (text, record) => {
       return (
@@ -92,7 +92,7 @@ export default class BuildsTable extends React.Component {
       );
     },
   }, {
-    title: <FormattedMessage id="buildinfo.pkg.gitBranch" />,
+    title: __i18n('代码分支'),
     dataIndex: 'gitBranch',
     width: 240,
     render: (text, record) => {
@@ -103,7 +103,7 @@ export default class BuildsTable extends React.Component {
       );
     },
   }, {
-    title: <FormattedMessage id="buildinfo.pkg.committer" />,
+    title: __i18n('提交人'),
     dataIndex: 'committer',
     width: 120,
     render: (text, record) => {
@@ -114,7 +114,7 @@ export default class BuildsTable extends React.Component {
       );
     },
   }, {
-    title: <FormattedMessage id="builds.detailInfo" />,
+    title: __i18n('详情'),
     align: 'center',
     width: 80,
     render: (value, record) => {

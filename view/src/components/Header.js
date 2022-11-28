@@ -82,7 +82,7 @@ function ContentHeader(props) {
             repo="reliable"
           />
         </span>
-        <Tooltip title={<FormattedMessage id="header.document" />}>
+        <Tooltip title={__i18n('文档')}>
           <a
             target="_blank"
             href={siteConfig.links.document}
@@ -90,7 +90,7 @@ function ContentHeader(props) {
             <BookOutlined />
           </a>
         </Tooltip>
-        <Tooltip title={<FormattedMessage id="header.issues" />}>
+        <Tooltip title={__i18n('问题反馈')}>
           <a
             target="_blank"
             href={siteConfig.links.issues}

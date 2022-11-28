@@ -83,7 +83,7 @@ function SiteSetting() {
             htmlType="submit"
             onClick={updateSite}
           >
-            <FormattedMessage id="setting.submit" />
+            {__i18n('更新设置')}
           </Button>
         </Form.Item>
       </Spin>

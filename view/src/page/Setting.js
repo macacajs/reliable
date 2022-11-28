@@ -19,22 +19,22 @@ export default class Setting extends React.Component {
         <Breadcrumb style={{ marginBottom: '10px' }}>
           <Breadcrumb.Item>
             <Link to="/">
-              <FormattedMessage id="sidebar.homepage" />
+              {__i18n('主页')}
             </Link>
           </Breadcrumb.Item>
           <Breadcrumb.Item>
-            <FormattedMessage id="sidebar.setting" />
+            {__i18n('设置')}
           </Breadcrumb.Item>
         </Breadcrumb>
-        <Card style={{ marginTop: 10 }} title={<FormattedMessage id="setting.dingMessage" />}>
+        <Card style={{ marginTop: 10 }} title={__i18n('钉钉消息设置')}>
           <div data-accessibilityid="dingtalk-webhooks">
             <DingdingSetting />
           </div>
         </Card>
-        <Card style={{ marginTop: 10 }} title={<FormattedMessage id="setting.site" />}>
+        <Card style={{ marginTop: 10 }} title={__i18n('站点设置')}>
           <SiteSetting />
         </Card>
-        <Card style={{ marginTop: 10 }} title={<FormattedMessage id="setting.versioning" />}>
+        <Card style={{ marginTop: 10 }} title={__i18n('版本信息')}>
           reliable-web: { window.pageConfig.version }
         </Card>
       </ReliableLayout>

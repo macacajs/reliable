@@ -112,7 +112,7 @@ function DingdingSetting() {
                               noStyle
                             >
                               <Select style={{ width: 88 }}>
-                                <Option value="build"><FormattedMessage id="setting.notification.build" /></Option>
+                                <Option value="build">{__i18n('构建')}</Option>
                               </Select>
                             </Form.Item>
                       )}
@@ -141,7 +141,7 @@ function DingdingSetting() {
                     block
                     icon={<PlusOutlined />}
                   >
-                    <FormattedMessage id="setting.addDingMessage" />
+                    {__i18n('添加通知')}
                   </Button>
                 </Form.Item>
               </>
@@ -154,7 +154,7 @@ function DingdingSetting() {
             type="primary"
             style={{ width: '100%' }}
           >
-            <FormattedMessage id="setting.submit" />
+            {__i18n('更新设置')}
           </Button>
         </Form.Item>
       </Form>

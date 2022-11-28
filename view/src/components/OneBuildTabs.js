@@ -103,20 +103,20 @@ export default class OneBuildTabs extends React.Component {
           style={{ height: 'auto' }}
           onChange={this.onTabChange}
         >
-          <TabPane tab={<FormattedMessage id="buildinfo.pkgTab" />} key="pkginfo">
+          <TabPane tab={__i18n('包信息')} key="pkginfo">
             <PkgTable
               fetchOneBuild={this.props.fetchOneBuild}
               data={getPkgInfo.packages}
               platform={getPkgInfo.platform}
             />
           </TabPane>
-          <TabPane tab={<FormattedMessage id="buildinfo.testTab" />} key="test">
+          <TabPane tab={__i18n('测试结果')} key="test">
             <TestTable data={this.getTestInfo()} />
           </TabPane>
-          <TabPane tab={<FormattedMessage id="buildinfo.extraTab" />} key="extrainfo">
+          <TabPane tab={__i18n('扩展信息')} key="extrainfo">
             <ExtraTable data={this.getExtraInfo()} />
           </TabPane>
-          <TabPane tab={<FormattedMessage id="buildinfo.filesTab" />} key="fileinfo">
+          <TabPane tab={__i18n('产物')} key="fileinfo">
             <FileTable data={this.getFileInfo()} />
           </TabPane>
         </Tabs>

@@ -11,7 +11,7 @@ export default class Setting extends React.Component {
       <ReliableLayout>
         <Breadcrumb style={{ marginBottom: '10px' }}>
           <Breadcrumb.Item>
-            <Link to="/"><FormattedMessage id="sidebar.homepage" /></Link>
+            <Link to="/">{__i18n('主页')}</Link>
           </Breadcrumb.Item>
         </Breadcrumb>
         <Alert message="coming soon" type="info" showIcon />

@@ -104,13 +104,13 @@ export default class Builds extends React.Component {
 
   getColumns = () => {
     return [{
-      title: <FormattedMessage id="builds.rank" />,
+      title: __i18n('排行'),
       key: 'rank',
       render: (text, record, index) => { return <span>{++index}</span>; },
       align: 'center',
       width: 80,
     }, {
-      title: <FormattedMessage id="builds.jobName" />,
+      title: __i18n('项目名'),
       dataIndex: 'jobName',
       render: (text, record) => {
         return (
@@ -120,7 +120,7 @@ export default class Builds extends React.Component {
         );
       },
     }, {
-      title: <FormattedMessage id="insight.test.lineCoverage.latest" />,
+      title: __i18n('行覆盖率'),
       dataIndex: 'linePercentList[0].linePercent',
       key: 'latestLinePercent',
       render: (text, record) => {
@@ -138,8 +138,8 @@ export default class Builds extends React.Component {
     }, {
       title: (
         <span>
-          <FormattedMessage id="insight.test.lineCoverage" />
-          <Popover content={<FormattedMessage id="insight.test.lineCoverage.tip" />}>
+          {__i18n('平均行覆盖率')}
+          <Popover content={__i18n('测试覆盖率的平均值')}>
             <QuestionCircleOutlined style={{ marginLeft: '2px' }} />
           </Popover>
         </span>
@@ -150,7 +150,7 @@ export default class Builds extends React.Component {
           ? (
             <Popover
               placement="right"
-              title={<FormattedMessage id="insight.test.lineCoverage.history" />}
+              title={__i18n('测试覆盖率历史记录')}
               content={(
                 <Table
                   size="small"
@@ -193,8 +193,8 @@ export default class Builds extends React.Component {
     }, {
       title: (
         <span>
-          <FormattedMessage id="insight.test.passPercent" />
-          <Popover content={<FormattedMessage id="insight.test.passPercent.tip" />}>
+          {__i18n('通过率')}
+          <Popover content={__i18n('CI 100% 成功次数 / CI 执行次数')}>
             <QuestionCircleOutlined style={{ marginLeft: '2px' }} />
           </Popover>
         </span>
@@ -205,7 +205,7 @@ export default class Builds extends React.Component {
           ? (
             <Popover
               placement="right"
-              title={<FormattedMessage id="insight.test.passPercent.history" />}
+              title={__i18n('通过率历史记录')}
               content={(
                 <Table
                   size="small"
@@ -246,7 +246,7 @@ export default class Builds extends React.Component {
           : '-';
       },
     }, {
-      title: <FormattedMessage id="insight.committer" />,
+      title: __i18n('最后提交'),
       dataIndex: 'committer',
       render: (text, record) => {
         return (
@@ -311,30 +311,30 @@ export default class Builds extends React.Component {
         }}
         >
           <Breadcrumb.Item>
-            <Link to="/"><FormattedMessage id="sidebar.homepage" /></Link>
+            <Link to="/">{__i18n('主页')}</Link>
           </Breadcrumb.Item>
           <Breadcrumb.Item>
-            <Link to="/insight"><FormattedMessage id="sidebar.insight" /></Link>
+            <Link to="/insight">{__i18n('洞察')}</Link>
           </Breadcrumb.Item>
         </Breadcrumb>
         <Row gutter={24}>
           <Col {...topColResponsiveProps}>
             <ChartCard
-              title={<FormattedMessage id="insight.builds.number" />}
+              title={__i18n('应用总数')}
               loading={this.state.loading1}
               content={this.state.data.length}
             />
           </Col>
           <Col {...topColResponsiveProps}>
             <ChartCard
-              title={<FormattedMessage id="insight.builds.trend" />}
+              title={__i18n('构建总数')}
               loading={this.state.loading2}
               content={this.state.total}
             />
           </Col>
           <Col {...topColResponsiveProps}>
             <ChartCard
-              title={<FormattedMessage id="insight.builds.top" />}
+              title={__i18n('榜单')}
               loading={this.state.loading3}
               content={this.getTopCard()}
             />
@@ -349,7 +349,7 @@ export default class Builds extends React.Component {
                   return (
                     <span>
                       <BulbOutlined />
-                      <FormattedMessage id="insight.dateRange.tip" />
+                      {__i18n('请选择时间范围，不选择将会统计全部数据')}
                     </span>
                   );
                 }}

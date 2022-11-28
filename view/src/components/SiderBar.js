@@ -9,7 +9,7 @@ import {
   LineChartOutlined,
   SettingOutlined,
 } from '@ant-design/icons';
-import { FormattedMessage } from 'react-intl';
+
 
 const { Sider } = Layout;
 

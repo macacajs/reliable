@@ -1,6 +1,6 @@
 import React from 'react';
 import QRCode from 'qrcode-react';
-import { FormattedMessage } from 'react-intl';
+
 
 import {
   Table,

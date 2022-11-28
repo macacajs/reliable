@@ -1,7 +1,7 @@
 import React from 'react';
 import { Breadcrumb } from 'antd';
 import { Link } from 'react-router-dom';
-import { FormattedMessage } from 'react-intl';
+
 
 import request from '../util/request';
 import { logger, queryParse } from '../util/index';

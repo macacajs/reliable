@@ -8,7 +8,6 @@ import {
   SettingOutlined,
   RightCircleOutlined,
 } from '@ant-design/icons';
-import { FormattedMessage } from 'react-intl';
 
 import {
   getUuid,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table } from 'antd';
-import { FormattedMessage } from 'react-intl';
+
 
 import { getUuid } from '../util/index';
 

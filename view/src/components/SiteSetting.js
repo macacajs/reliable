@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import safeGet from 'lodash/get';
-import { FormattedMessage } from 'react-intl';
+
 import {
   Form,
   Spin,

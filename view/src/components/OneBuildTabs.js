@@ -3,7 +3,6 @@ import moment from 'moment';
 import safeGet from 'lodash/get';
 import { Spin, Tabs } from 'antd';
 
-
 import PkgTable from './PkgTable';
 import TestTable from './TestTable';
 import ExtraTable from './ExtraTable';

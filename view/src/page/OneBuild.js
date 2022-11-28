@@ -2,7 +2,6 @@ import React from 'react';
 import { Breadcrumb } from 'antd';
 import { Link } from 'react-router-dom';
 
-
 import request from '../util/request';
 import { logger, queryParse } from '../util/index';
 import OneBuildTabs from '../components/OneBuildTabs';

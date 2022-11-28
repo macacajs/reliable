@@ -18,7 +18,6 @@ import safeGet from 'lodash/get';
 
 import { Link } from 'react-router-dom';
 
-
 import request from '../util/request';
 import ChartCard from '../components/ChartCard';
 import {

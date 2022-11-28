@@ -1,7 +1,6 @@
 import React from 'react';
 import { Table } from 'antd';
 
-
 import { getUuid } from '../util/index';
 
 const columns = [{

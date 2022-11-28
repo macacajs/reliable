@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Breadcrumb } from 'antd';
 
-
 import { queryParse } from '../util/index';
 import BuildsTabs from '../components/BuildsTabs';
 import ReliableLayout from '../components/ReliableLayout';

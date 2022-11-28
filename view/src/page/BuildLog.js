@@ -4,7 +4,6 @@ import {
 } from 'antd';
 import { Link } from 'react-router-dom';
 
-
 import { queryParse } from '../util/index';
 import ReliableLayout from '../components/ReliableLayout';
 

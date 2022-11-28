@@ -10,7 +10,6 @@ import {
   SettingOutlined,
 } from '@ant-design/icons';
 
-
 const { Sider } = Layout;
 
 const { siteConfig, user } = window.pageConfig;

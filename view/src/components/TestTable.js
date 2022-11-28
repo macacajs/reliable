@@ -1,16 +1,15 @@
 import React from 'react';
 import { Table } from 'antd';
-import { FormattedMessage } from 'react-intl';
 
 import { getUuid } from '../util/index';
 
 const columns = [{
-  title: <FormattedMessage id="buildinfo.test.lineCoverage" />,
+  title: __i18n('行覆盖率'),
   dataIndex: 'lineCoverage',
   render: value => { return <span>{value ? `${value}%` : ''}</span>; },
   width: 100,
 }, {
-  title: <FormattedMessage id="buildinfo.test.passPercent" />,
+  title: __i18n('通过率'),
   dataIndex: 'passingRate',
   render: (text, record) => {
     return (
@@ -32,19 +31,19 @@ const columns = [{
   },
   width: 140,
 }, {
-  title: <FormattedMessage id="buildinfo.test.testReporter" />,
+  title: __i18n('测试报告'),
   dataIndex: 'testReporter',
-  render: value => { return (value ? <a href={value} target="_blank"><FormattedMessage id="buildinfo.test.reporter" /></a> : ''); },
+  render: value => { return (value ? <a href={value} target="_blank">{__i18n('查看')}</a> : ''); },
 }, {
-  title: <FormattedMessage id="buildinfo.test.coverageReporter" />,
+  title: __i18n('覆盖率报告'),
   dataIndex: 'coverageReporter',
-  render: value => { return (value ? <a href={value} target="_blank"><FormattedMessage id="buildinfo.test.reporter" /></a> : ''); },
+  render: value => { return (value ? <a href={value} target="_blank">{__i18n('查看')}</a> : ''); },
 }, {
-  title: <FormattedMessage id="buildinfo.pkg.gitBranch" />,
+  title: __i18n('代码分支'),
   dataIndex: 'gitBranch',
   width: 240,
 }, {
-  title: <FormattedMessage id="buildinfo.pkg.gitCommit" />,
+  title: __i18n('提交链接'),
   dataIndex: 'gitCommit',
   render: (value, record) => {
     return (
@@ -54,10 +53,10 @@ const columns = [{
     );
   },
 }, {
-  title: <FormattedMessage id="buildinfo.pkg.committer" />,
+  title: __i18n('提交人'),
   dataIndex: 'committer',
 }, {
-  title: <FormattedMessage id="buildinfo.pkg.commitTime" />,
+  title: __i18n('提交时间'),
   dataIndex: 'commitTime',
 }];
 

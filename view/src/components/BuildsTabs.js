@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tabs } from 'antd';
 import { withRouter } from 'react-router-dom';
-import { FormattedMessage } from 'react-intl';
+
 import safeGet from 'lodash/get';
 
 import request from '../util/request';
@@ -144,7 +144,7 @@ class BuildsTabs extends React.Component {
           onTabClick={this.handleTabClick}
           style={{ height: 'auto' }}
         >
-          <TabPane tab={<><FormattedMessage id="sidebar.allbuilds" /> ({allJobName.length})</>} key="">
+          <TabPane tab={<>{__i18n('所有构建')} ({allJobName.length})</>} key="">
           </TabPane>
           { listItems }
         </Tabs>

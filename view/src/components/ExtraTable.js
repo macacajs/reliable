@@ -1,16 +1,15 @@
 import React from 'react';
 import { Table } from 'antd';
-import { FormattedMessage } from 'react-intl';
 
 import { getUuid } from '../util/index';
 
 const columns = [{
-  title: <FormattedMessage id="buildinfo.extra.extraName" />,
+  title: __i18n('项'),
   dataIndex: 'extraName',
   width: 200,
   render: value => { return <span className="itemName">{value}</span>; },
 }, {
-  title: <FormattedMessage id="buildinfo.extra.extraContent" />,
+  title: __i18n('内容'),
   dataIndex: 'extraContent',
   render: value => { return <pre>{JSON.stringify(value, null, 2)}</pre>; },
 }];

@@ -1,4 +1,4 @@
-import locale from 'easy-i18n-cli/src/web/locale';
+import locale from 'easy-i18n-cli/src/locale';
 import en from './en-US';
 
 window.__i18n = window.__i18n || locale({

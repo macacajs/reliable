@@ -51,8 +51,8 @@ export default class SiderBar extends React.Component {
           </Menu.Item>
           <Menu.Item key="/insight">
             <Link to="/insight">
+              <LineChartOutlined />
               <span>
-                <LineChartOutlined />
                 {__i18n('洞察')}
               </span>
             </Link>
